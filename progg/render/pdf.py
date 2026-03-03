@@ -6,12 +6,13 @@ from . import renderer
 from .. import dm
 
 _LANDSCAPE_A4 = landscape(A4)
+_SESS_PADDING = 20
 
 
 def _title_tbl(s: str):
     return [Table([[s]], style=[("FONTNAME", (0,0), (0,0), "Helvetica-Bold")])]
 
-def _session_tbl(sess: dm.Session):
+def _session_tbl(sess: dm.Session, session_count: int):
     rows = [
         [sess.name],
         [None, None, "s", "t", "%"],
@@ -25,14 +26,19 @@ def _session_tbl(sess: dm.Session):
     rows.append(["toistot", None, None, None, "voluumi"])
     rows.append([sess.total_reps(), None, None, None, sess.volume()])
 
-    return [Table(rows, style=[
+    col_width = (_LANDSCAPE_A4[0] - 4*_SESS_PADDING) // session_count // 5
+
+    return [Table(rows, colWidths=col_width, style=[
         ("BOX", (0,0), (-1,-1), 1, "black"),
-        ("FONTNAME", (0,0), (0,0), "Helvetica-Bold")
+        ("FONTNAME", (0,0), (0,0), "Helvetica-Bold"),
+        # TODO: adjust alignment
+        ("ALIGN", (-1, 0), (-1, -1), "RIGHT"),
     ])]
 
 
 def _page(program_name: str, cycle: dm.Cycle):
-    sessions = [_session_tbl(s) for s in cycle.sessions]
+    sess_count = len(cycle.sessions)
+    sessions = [_session_tbl(s, sess_count) for s in cycle.sessions]
     return Table([
         _title_tbl(program_name),
         _title_tbl(cycle.name),
