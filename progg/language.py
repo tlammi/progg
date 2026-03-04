@@ -2,6 +2,52 @@ from lark import Lark, Tree, Transformer
 
 from . import dm
 
+_SET_GROUP_GRAMMAR = r"""
+spec: sets_reps_what | reps_what | sets_reps | anything
+?sets_reps_what: sets "x" reps "x" what
+?reps_what: reps "x" what
+?sets_reps: sets "x" reps
+
+sets: NUMBER
+reps: NUMBER ( "+" NUMBER )*
+what: NUMBER /[^0-9].*/
+anything: /.+/
+
+%import common.NUMBER
+
+%import common.WS
+%ignore WS
+"""
+
+class SgTransformer(Transformer):
+
+    def anything(self, items):
+        return items[0].value
+
+    def sets(self, items):
+        return int(items[0])
+
+    def reps(self, items):
+        return [int(i) for i in items]
+
+    def what(self, items):
+        return items[0].value + items[1].value
+
+    def spec(self, items):
+        if len(items) == 1 and isinstance(items[0], str):
+            return dm.SetGroup(0, [], items[0])
+        children = items[0].children
+        if len(children) == 3:
+            return dm.SetGroup(children[0], children[1], children[2])
+        assert len(children) == 2
+        if isinstance(children[1], list):
+            return dm.SetGroup(children[0], children[1], "")
+        return dm.SetGroup(1, children[0], children[1])
+
+
+def parse_set_group(s: str) -> dm.SetGroup:
+    return SgTransformer().transform(Lark(_SET_GROUP_GRAMMAR, start="spec").parse(s))
+
 _GRAMMAR = r"""
 
 program: "program" identifier cycle*
@@ -25,9 +71,7 @@ class Mt(Transformer):
         # TODO: This should use real parsing
         sets = []
         for i in items[2:]:
-            count, reps, what = i.split("x")
-            replist = [int(i) for i in reps.split("+")]
-            sets.append(dm.SetGroup(count=int(count), reps=replist, what=what))
+            sets.append(parse_set_group(i))
         return dm.Exercise(name=nm, sets=sets)
 
     def session(self, items):
@@ -45,3 +89,6 @@ class Mt(Transformer):
 
 def parse(s: str) -> dm.Program:
     return Mt().transform(Lark(_GRAMMAR, start="program").parse(s))
+
+
+
