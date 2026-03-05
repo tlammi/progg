@@ -3,14 +3,14 @@ from lark import Lark, Tree, Transformer
 from . import dm
 
 _SET_GROUP_GRAMMAR = r"""
-spec: sets_reps_what | reps_what | sets_reps | anything
+spec: sets_reps_what | sets_reps | reps_what | anything
 ?sets_reps_what: sets "x" reps "x" what
-?reps_what: reps "x" what
 ?sets_reps: sets "x" reps
+?reps_what: reps "x" what
 
 sets: NUMBER
 reps: NUMBER ( "+" NUMBER )*
-what: NUMBER /[^0-9].*/
+what: anything
 anything: /.+/
 
 %import common.NUMBER
@@ -31,7 +31,7 @@ class SgTransformer(Transformer):
         return [int(i) for i in items]
 
     def what(self, items):
-        return items[0].value + items[1].value
+        return items[0]
 
     def spec(self, items):
         if len(items) == 1 and isinstance(items[0], str):
@@ -56,9 +56,9 @@ session: sess_lit identifier exercise*
 exercise: ex_lit identifier+
 
 ?cycle_lit.1: "cycle"
-?sess_lit.1: "session"
-?ex_lit.1: "exercise"
-?identifier.0: STRING | /\S+/
+?sess_lit.1: "session" | "sess"
+?ex_lit.1: "exercise" | "ex"
+?identifier.0: STRING | /[^"]\S+/
 
 %import common.ESCAPED_STRING -> STRING
 %import common.WS
@@ -66,11 +66,15 @@ exercise: ex_lit identifier+
 """
 
 class Mt(Transformer):
+
     def exercise(self, items):
         nm = items[1].strip('"')
         # TODO: This should use real parsing
         sets = []
         for i in items[2:]:
+            i = i.value
+            if i.startswith('"') and i.endswith('"'):
+                i = i[1:-1]
             sets.append(parse_set_group(i))
         return dm.Exercise(name=nm, sets=sets)
 

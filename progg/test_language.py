@@ -34,3 +34,9 @@ def test_setgroup_free_form():
     assert res.count == 0
     assert res.reps == []
     assert res.what == s
+
+def test_setgroup_rpe():
+    res = psg("2x3xRPE 9")
+    assert res.count == 2
+    assert res.reps == [3]
+    assert res.what == "RPE 9"
