@@ -58,7 +58,8 @@ def _session_tbl(sess: dm.Session, session_count: int):
     ]
     for e in sess.exercises:
         name_rows = _wrap_text(e.name, tbl_width)
-        exercise_name_styles.append(("FONTSIZE", (0, len(rows)), (-1, len(rows)+len(name_rows)-1), _font_size(e.name)))
+        fs = min(_font_size(e.name), 10)
+        exercise_name_styles.append(("FONTSIZE", (0, len(rows)), (-1, len(rows)+len(name_rows)-1), fs))
         for row in name_rows:
             rows.append([row])
         for s in e.sets:
@@ -78,7 +79,6 @@ def _session_tbl(sess: dm.Session, session_count: int):
                 max_reps_width = max(max_reps_width, _rendered_str_width(r[3], 12))
 
     col_widths[3] = max_reps_width
-    print(col_widths)
 
     return [Table(rows, colWidths=col_widths, style=[
         ("FONTSIZE", (0,0), (-1,-1), 8),
