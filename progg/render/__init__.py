@@ -1,1 +1,1 @@
-from .pdf import PdfRenderer
+from .pdf.renderer import PdfRenderer

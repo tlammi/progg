@@ -3,8 +3,8 @@ from reportlab.platypus import SimpleDocTemplate, Table, PageBreak
 from reportlab.lib.pagesizes import A4, landscape
 from reportlab.pdfbase.pdfmetrics import stringWidth
 
-from . import renderer
-from .. import dm
+from .. import renderer
+from ... import dm
 
 _LANDSCAPE_A4 = landscape(A4)
 _SESS_PADDING = 20
