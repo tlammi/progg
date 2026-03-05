@@ -8,6 +8,7 @@ def test_reserve_empty():
     g = Grid()
     g.reserve(20, 100)
     assert g.dims() == (20, 100)
+    assert g[19, 99] is None
 
 def test_reserve_smaller():
     g = Grid()
@@ -31,3 +32,18 @@ def test_add_child_offsets():
     v = g[4, 6]
     assert v == "foo"
 
+def test_add_child_style():
+    g = Grid()
+    child = Grid()
+    child.reserve(10, 10)
+    child.style.append(["DONTCARE", (1, 2), (-1, -1), "dontcare"])
+    g.add_child(1, 2, child)
+
+    style = g.style
+    assert len(style) == 1
+    a, tl, br, b = style[0]
+    assert a == "DONTCARE"
+    assert b == "dontcare"
+
+    assert tl == (2, 4)
+    assert br == (10, 11)

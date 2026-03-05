@@ -1,3 +1,4 @@
+from reportlab.platypus import Table
 
 def _offset_style(entry: list, x: int, y: int, w: int, h: int):
     tl_x, tl_y = entry[1]
@@ -19,7 +20,7 @@ def _offset_style(entry: list, x: int, y: int, w: int, h: int):
     else:
         br_y += y
     rest = entry[3:]
-    return [entry[0], (tl_x, tl_y), (br_x, br_y)] + rest
+    return (entry[0], (tl_x, tl_y), (br_x, br_y), *rest)
 
 class Grid:
 
@@ -33,7 +34,13 @@ class Grid:
     def __setitem__(self, idx, val):
         x, y = idx
         self.reserve(x+1, y+1)
-        self.data[idx[1]][idx[0]] = val
+        self.data[y][x] = val
+
+    def emplace(self, x, y, val: list):
+        self.reserve(x+1+len(val), y+1)
+        for i, v in enumerate(val):
+             self.data[y][x+i] = v
+
 
     def dims(self):
         if not self.data:
@@ -43,14 +50,17 @@ class Grid:
     def reserve(self, x: int, y: int):
         orig_x, orig_y = self.dims()
         if orig_x < x:
-            diff = orig_x - x
+            diff = x - orig_x
             for row in self.data:
-                row += [None] * diff
+                row.extend([None] * diff)
         if orig_y < y:
             for _ in range(y - orig_y):
-                self.data.append([None] * x)
+                self.data.append([None] * max(x, orig_x))
+        assert self.dims()[0] >= x, f"{self.dims()[0]} vs {x}"
+        assert self.dims()[1] >= y
 
     def add_child(self, x: int, y: int, child: "Grid"):
+        assert child is not self
         w, h = child.dims()
         self.reserve(x+w, h+y)
         for i in range(h):
@@ -58,3 +68,6 @@ class Grid:
                 self.data[y+i][x+j] = child.data[i][j]
         for s in child.style:
             self.style.append(_offset_style(s, x, y, w, h))
+
+    def as_table(self, **kwargs):
+        return Table(self.data, style=self.style, **kwargs)
