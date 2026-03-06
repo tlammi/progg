@@ -44,6 +44,10 @@ class Session:
     def volume(self, unit: str = ""):
         return sum(e.volume(unit) for e in self.exercises)
 
+    def avg_load(self, unit: str = ""):
+        # TODO: implement
+        return 0.0
+
 @dataclass
 class Cycle:
     name: str
@@ -54,6 +58,10 @@ class Cycle:
 
     def volume(self, unit: str = ""):
         return sum(s.volume(unit) for s in self.sessions)
+
+    def avg_load(self, unit: str = ""):
+        # TODO: implement
+        return 0.0
 
 @dataclass
 class Program:
