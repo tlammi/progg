@@ -71,7 +71,15 @@ def _page(cycle: dm.Cycle, program_name: str):
     hdr = Grid()
     hdr[0, 0] = program_name
     hdr[0, 2] = cycle.name
-    hdr.style.append(("FONTNAME", (0, 0), (-1, -1), "Helvetica-Bold"))
+    hdr[2, 2] = "toistot"
+    hdr[3, 2] = cycle.total_reps()
+    hdr[5, 2] = "voluumi"
+    hdr[6, 2] = cycle.volume(unit="%")
+    hdr.style.extend([
+        ("FONTNAME", (0, 0), (0, -1), "Helvetica-Bold"),
+        ("BOX", (2,2), (3, 2), 1, "black"),
+        ("BOX", (5,2), (6, 2), 1, "black"),
+    ])
 
     sessions = Grid()
     session_list = [_session_grid(s) for s in cycle.sessions]
