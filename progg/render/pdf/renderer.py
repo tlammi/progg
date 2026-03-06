@@ -80,6 +80,7 @@ def _page(cycle: dm.Cycle, program_name: str):
         s[0, max_height+1] = "toistot"
         s[0, max_height+2] = cycle.sessions[i].total_reps()
         s[-1, max_height+1] = "voluumi"
+        s[-1, max_height+2] = cycle.sessions[i].volume(unit="%")
     for g in session_list:
         x, _ = sessions.dims()
         if x == 0:
