@@ -37,7 +37,7 @@ class Grid:
         self.data[y][x] = val
 
     def emplace(self, x, y, val: list):
-        self.reserve(x+1+len(val), y+1)
+        self.reserve(x+len(val), y+1)
         for i, v in enumerate(val):
              self.data[y][x+i] = v
 
