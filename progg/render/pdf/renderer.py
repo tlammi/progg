@@ -76,8 +76,9 @@ def _page(cycle: dm.Cycle, program_name: str):
     sessions = Grid()
     session_list = [_session_grid(s) for s in cycle.sessions]
     max_height = max(s.dims()[1] for s in session_list)
-    for s in session_list:
+    for i, s in enumerate(session_list):
         s[0, max_height+1] = "toistot"
+        s[0, max_height+2] = cycle.sessions[i].total_reps()
         s[-1, max_height+1] = "voluumi"
     for g in session_list:
         x, _ = sessions.dims()
