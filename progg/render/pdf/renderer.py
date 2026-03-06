@@ -51,10 +51,12 @@ def _session_grid(sess: dm.Session):
     g.emplace(2, 1, ["s", "t", "p"])
     for e in sess.exercises:
         _, y = g.dims()
-        g[0, y] = e.name
-        print(_rendered_str_width(e.name))
-        g.style.append(("SPAN", (0, y), (-1, y)))
-        g.style.append(("FONTSIZE", (0, y), (-1, y), _font_size(e.name)))
+        nm_rows = _wrap_text(e.name)
+        for r in nm_rows:
+            g[0, g.dims()[1]] = r
+        g.style.append(("FONTSIZE", (0, y), (-1, g.dims()[1]-1), _font_size(e.name)))
+        for i in range(y, g.dims()[1]):
+            g.style.append(("SPAN", (0, i), (-1, i)))
         for s in e.sets:
             _, y = g.dims()
             g.emplace(2, y, [s.count, "+".join(str(i) for i in s.reps), s.what])
