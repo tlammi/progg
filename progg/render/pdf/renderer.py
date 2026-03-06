@@ -81,10 +81,14 @@ def _page(cycle: dm.Cycle, program_name: str):
             sessions.add_child(x, 0, g)
         else:
             sessions.add_child(x+1, 0, g)
-    return Table([
+    w, h = _LANDSCAPE_A4
+
+    tbl = Table([
         [hdr.as_table(hAlign="LEFT")],
         [sessions.as_table()],
     ])
+
+    return KeepInFrame(maxWidth=w, maxHeight=h, content=[tbl])
 
 class PdfRenderer(renderer.Renderer):
 
