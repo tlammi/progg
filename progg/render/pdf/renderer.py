@@ -48,7 +48,7 @@ def _wrap_text(text: str) -> list[str]:
 def _session_grid(sess: dm.Session):
     g = Grid()
     g[0, 0] = sess.name
-    g.emplace(2, 1, ["s", "t", "p"])
+    g.emplace(0, 1, ["s", "t", "p"])
     for e in sess.exercises:
         _, y = g.dims()
         nm_rows = _wrap_text(e.name)
@@ -59,7 +59,7 @@ def _session_grid(sess: dm.Session):
             g.style.append(("SPAN", (0, i), (-1, i)))
         for s in e.sets:
             _, y = g.dims()
-            g.emplace(2, y, [s.count, "+".join(str(i) for i in s.reps), s.what])
+            g.emplace(0, y, [s.count, "+".join(str(i) for i in s.reps), s.what])
     g.style.extend([
         ("SPAN", (0, 0), (-1, 0)),
         ("BOX", (0, 0), (-1, -1), 1, "black"),
@@ -74,18 +74,21 @@ def _page(cycle: dm.Cycle, program_name: str):
     hdr.style.append(("FONTNAME", (0, 0), (-1, -1), "Helvetica-Bold"))
 
     sessions = Grid()
-    for s in cycle.sessions:
-        g = _session_grid(s)
+    session_list = [_session_grid(s) for s in cycle.sessions]
+    max_height = max(s.dims()[1] for s in session_list)
+    for s in session_list:
+        s[0, max_height+1] = "toistot"
+        s[-1, max_height+1] = "voluumi"
+    for g in session_list:
         x, _ = sessions.dims()
         if x == 0:
             sessions.add_child(x, 0, g)
         else:
             sessions.add_child(x+1, 0, g)
     w, h = _LANDSCAPE_A4
-
     tbl = Table([
         [hdr.as_table(hAlign="LEFT")],
-        [sessions.as_table()],
+        [KeepInFrame(maxWidth=w, maxHeight=h, content=[sessions.as_table()])],
     ])
 
     return KeepInFrame(maxWidth=w, maxHeight=h, content=[tbl])
