@@ -74,9 +74,9 @@ def _page(cycle: dm.Cycle, program_name: str):
     hdr[2, 2] = "toistot"
     hdr[3, 2] = cycle.total_reps()
     hdr[5, 2] = "voluumi"
-    hdr[6, 2] = cycle.volume(unit="%")
+    hdr[6, 2] = f"{cycle.volume(unit="%")}%"
     hdr[8, 2] = "keskikuorma"
-    hdr[9, 2] = f"{cycle.avg_load(unit="%"):.2f}"
+    hdr[9, 2] = f"{cycle.avg_load(unit="%"):.2f}%"
     hdr.style.extend([
         ("FONTNAME", (0, 0), (0, -1), "Helvetica-Bold"),
         ("BOX", (2,2), (3, 2), 1, "black"),
@@ -94,11 +94,12 @@ def _page(cycle: dm.Cycle, program_name: str):
         s[0, max_height+1] = "toistot"
         s[0, max_height+2] = reps
         s[-1, max_height+1] = "vol"
-        s[-1, max_height+2] = vol
+        s[-1, max_height+2] = f"{vol}%"
         s[0, max_height+3] = "kk"
-        s[0, max_height+4] = f"{avg_load:.2f}"
+        s[0, max_height+4] = f"{avg_load:.2f}%"
         s[-1, max_height+3] = "sk"
         s[-1, max_height+4] = 0.0
+        s.style.append(("FONTSIZE", (0, max_height+1), (-1, -1), 8))
     for g in session_list:
         x, _ = sessions.dims()
         if x == 0:
