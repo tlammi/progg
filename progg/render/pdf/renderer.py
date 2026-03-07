@@ -88,10 +88,17 @@ def _page(cycle: dm.Cycle, program_name: str):
     session_list = [_session_grid(s) for s in cycle.sessions]
     max_height = max(s.dims()[1] for s in session_list)
     for i, s in enumerate(session_list):
+        reps = cycle.sessions[i].total_reps()
+        vol = cycle.sessions[i].volume(unit="%")
+        avg_load = vol / reps if reps > 0 else 0.0
         s[0, max_height+1] = "toistot"
-        s[0, max_height+2] = cycle.sessions[i].total_reps()
-        s[-1, max_height+1] = "voluumi"
-        s[-1, max_height+2] = cycle.sessions[i].volume(unit="%")
+        s[0, max_height+2] = reps
+        s[-1, max_height+1] = "vol"
+        s[-1, max_height+2] = vol
+        s[0, max_height+3] = "kk"
+        s[0, max_height+4] = f"{avg_load:.2f}"
+        s[-1, max_height+3] = "sk"
+        s[-1, max_height+4] = 0.0
     for g in session_list:
         x, _ = sessions.dims()
         if x == 0:
