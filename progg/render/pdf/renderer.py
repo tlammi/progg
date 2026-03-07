@@ -76,7 +76,7 @@ def _page(cycle: dm.Cycle, program_name: str):
     hdr[5, 2] = "voluumi"
     hdr[6, 2] = cycle.volume(unit="%")
     hdr[8, 2] = "keskikuorma"
-    hdr[9, 2] = cycle.avg_load(unit="%")
+    hdr[9, 2] = f"{cycle.avg_load(unit="%"):.2f}"
     hdr.style.extend([
         ("FONTNAME", (0, 0), (0, -1), "Helvetica-Bold"),
         ("BOX", (2,2), (3, 2), 1, "black"),
