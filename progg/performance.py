@@ -10,7 +10,7 @@ from dataclasses import dataclass
 @dataclass
 class Config:
     """
-    Configuration for Banister fitness fatigue model calculations
+    Configuration for Bannister fitness fatigue model calculations
     """
 
     # How many days the positive effects of training persist
@@ -34,11 +34,16 @@ class Config:
     # This is used to more heavily emphasize heavy sessions
     fatigue_exponent = 1.3
 
+    # Exponent to apply to reps in a set
+    #
+    # This emphasizes longer sets more
+    reps_exponent = 1.1
+
     # Exponent to add when calculating exercise loads
     #
     # This emphasizes heavier lifts more. For instance 100% lifts
     # are disproportionately heavier than 80% lifts
-    load_exponent = 2.5
+    weight_exponent = 2.5
 
 
 class Calculator:
@@ -51,10 +56,13 @@ class Calculator:
         self._fitness_exp = math.exp(-1/self._cfg.fitness_days)
         self._fatigue_exp = math.exp(-1/self._cfg.fatigue_days)
 
+    def load(self, reps: int, relative_weight: float):
+        return reps ** self._cfg.reps_exponent * relative_weight ** self._cfg.weight_exponent
+
     def __call__(self, sets: list[tuple[int, float]]) -> float:
         load = 0.0
         for reps, relative_load in sets:
-            load += reps * relative_load ** self._cfg.load_exponent
+            load += reps ** self._cfg.reps_exponent * relative_load ** self._cfg.weight_exponent
 
         fit = self._fitness + self._fitness_exp + self._cfg.fitness_multiplier * load
         fat = self._fatigue + self._fatigue_exp + self._cfg.fatigue_multiplier * load ** self._cfg.fatigue_exponent
