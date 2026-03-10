@@ -1,0 +1,174 @@
+program "Ohjelma 1"
+  cycle "Viikko 1 (Voluumi)"
+    session Maanantai
+      ex "Voimatempaus sylistä" 3x5x40%
+      ex "Raaka-te puolikyykkyyn" 5x55% 5x60% 2x5x65%
+      ex "Te-veto" 5x60% 5x65% 5x70% 2x5x75%
+      ex "Kyykky" 1x75% 1x80% 1x85% 1x90% 2x3x80% 4x8x70%
+      ex "Pystäri" 1x65% 1x75% 1x80% 1x85% 3x3x75%
+
+    session Tiistai
+      ex jumppa
+
+    session Keskiviikko
+      ex Ty-veto 5x65% 5x70% 4x5x75%
+      ex Etukyykky 1x75% 1x80% 1x85% 1x90% 2x3x80% 4x6x75%
+      ex Vapu 5x75% 4x80% 3x3x85%
+
+    session Torstai
+      ex jumppa
+
+    session Perjantai
+      ex "Te-veto" 5x60% 5x65% 5x70% 2x5x75%
+      ex "Kyykky" 1x75% 1x80% 1x85% 1x90% 2x3x80% 4x10x65%
+      ex Leuat 3x10
+
+    session Lauantai
+      ex Rive 5x65% 5x70% 3x2x75%
+      ex Ty-veto 5x65% 5x70% 4x75% 2x4x80% 2x5x75%
+      ex "YT pukeilta" 3x80% 3x85% 3x90% 3x3x95%
+
+    session Sunnuntai
+
+  cycle "Viikko 2 (Voluumi)"
+    session Maanantai
+      ex "Kyykky" 1x75% 1x80% 1x85% 1x90%
+      ex "Voimatempaus sylistä" 3x5x40%
+      ex "Raaka-te puolikyykkyyn" 5x55% 5x60% 2x5x65%
+      ex "Te-veto" 5x60% 5x65% 5x70% 5x75%
+      ex "Kyykky" 2x3x80% 4x8x70% 2x8x65%
+      ex "Pystäri" 1x65% 1x75% 1x80% 1x85% 3x3x75%
+
+    session Tiistai
+      ex jumppa
+
+    session Keskiviikko
+      ex Ty-veto 2x5x65% 2x5x70% 4x5x75% 4x5x80%
+      ex Etukyykky 1x75% 1x80% 1x85% 1x90% 2x3x80% 4x6x75%
+      ex Vapu 5x75% 4x80% 3x3x85%
+
+    session Torstai
+      ex jumppa
+
+    session Perjantai
+      ex "Te-veto" 5x60% 5x65% 2x5x70% 2x5x75% 2x5x80%
+      ex "Kyykky" 1x75% 1x80% 1x85% 1x90% 2x3x80% 4x10x65%
+      ex Leuat 3x10
+
+    session Lauantai
+      ex Rive 5x65% 5x70% 3x2x75%
+      ex Ty-veto 5x65% 5x70% 4x75% 4x80%
+      ex Etukyykky 1x75% 1x80% 1x85% 1x90% 2x3x80% 4x6x75%
+      ex "YT pukeilta" 3x80% 3x85% 3x90% 3x3x95%
+
+    session Sunnuntai
+
+  cycle "Viikko 3 (Voluumi)"
+    session Maanantai
+      ex "Kyykky" 1x75% 1x80% 1x85% 1x90%
+      ex "Voimatempaus sylistä" 3x5x40%
+      ex "Raaka-te puolikyykkyyn" 5x55% 5x60% 2x5x65%
+      ex "Te-veto" 5x60% 5x65% 5x70% 5x75%
+      ex "Kyykky" 2x3x80% 2x8x70% 2x8x65%
+      ex "Pystäri" 1x65% 1x75% 1x80% 1x85% 3x3x75%
+      ex "Te-veto stopilla AP" 5x55% 5x60% 4x65% 3x3x70%
+
+    session Tiistai
+      ex jumppa
+
+    session Keskiviikko
+      ex Ty-veto 2x5x65% 2x5x70% 4x5x75% 4x5x80%
+      ex Etukyykky 1x75% 1x80% 1x85% 1x90% 2x3x80% 4x6x75%
+      ex Vapu 5x75% 4x80% 3x3x85%
+      ex "Etukyykky stopilla" 2x4x60% 2x4x65%  4x70%
+
+    session Torstai
+      ex jumppa
+
+    session Perjantai
+      ex "Te-veto" 5x60% 5x65% 2x5x70% 2x5x75% 5x80%
+      ex "Kyykky" 1x75% 1x80% 1x85% 1x90% 2x3x80% 4x10x65%
+      ex "Te-veto korokkeelta" 5x60% 5x65% 5x70%
+      ex Leuat 3x10
+
+    session Lauantai
+      ex Rive 5x65% 5x70% 3x2x75%
+      ex Ty-veto 5x65% 5x70% 4x75% 4x80%
+      ex Etukyykky 1x75% 1x80% 1x85% 1x90% 2x3x80% 4x6x75%
+      ex "Ty-veto korokkeelta" 4x60% 4x65% 4x70%
+      ex "YT pukeilta" 3x80% 3x85% 3x90% 3x3x95%
+
+    session Sunnuntai
+
+  cycle "Viikko 4 (Lepo)"
+    session Maanantai
+    session Tiistai
+    session Keskiviikko
+    session Torstai
+    session Perjantai
+    session Lauantai
+    session Sunnuntai
+
+  cycle "Viikko 5 (Voima)"
+    session Maanantai
+    session Tiistai
+    session Keskiviikko
+    session Torstai
+    session Perjantai
+    session Lauantai
+    session Sunnuntai
+
+  cycle "Viikko 6 (Voima)"
+    session Maanantai
+    session Tiistai
+    session Keskiviikko
+    session Torstai
+    session Perjantai
+    session Lauantai
+    session Sunnuntai
+
+  cycle "Viikko 7 (Voima)"
+    session Maanantai
+    session Tiistai
+    session Keskiviikko
+    session Torstai
+    session Perjantai
+    session Lauantai
+    session Sunnuntai
+
+  cycle "Viikko 8 (Lepo)"
+    session Maanantai
+    session Tiistai
+    session Keskiviikko
+    session Torstai
+    session Perjantai
+    session Lauantai
+    session Sunnuntai
+
+  cycle "Viikko 9 (Teho)"
+    session Maanantai
+    session Tiistai
+    session Keskiviikko
+    session Torstai
+    session Perjantai
+    session Lauantai
+    session Sunnuntai
+
+  cycle "Viikko 10 (Teho)"
+    session Maanantai
+    session Tiistai
+    session Keskiviikko
+    session Torstai
+    session Perjantai
+    session Lauantai
+    session Sunnuntai
+
+  cycle "Viikko 10 (Kisa)"
+    session Maanantai
+    session Tiistai
+    session Keskiviikko
+    session Torstai
+    session Perjantai
+    session Lauantai
+    session Sunnuntai
+
