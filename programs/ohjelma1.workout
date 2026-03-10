@@ -102,20 +102,67 @@ program "Ohjelma 1"
 
   cycle "Viikko 4 (Lepo)"
     session Maanantai
+      ex "Voimatempaus sylistä" 3x5x40%
+      ex "Raaka-te puolikyykkyyn" 5x55% 5x60% 2x5x65%
+      ex "Te-veto" 5x60% 5x65% 5x70% 5x75%
+      ex "Kyykky" 1x75% 1x80% 1x85% 1x90% 3x80% 2x8x70%
+      ex "Pystäri" 1x65% 1x75% 1x80% 1x85% 3x3x75%
+
     session Tiistai
+      ex jumppa
+
     session Keskiviikko
+      ex Ty-veto 5x65% 5x70% 2x5x75%
+      ex Etukyykky 1x75% 1x80% 1x85% 1x90% 2x3x80% 6x75%
+      ex Vapu 5x75% 4x80% 3x3x85%
+
     session Torstai
+      ex jumppa
+
     session Perjantai
+      ex "Te-veto" 5x60% 5x65% 5x70% 5x75%
+      ex "Kyykky" 1x75% 1x80% 1x85% 1x90% 2x3x80% 2x10x65%
+      ex Leuat 3x10
+
     session Lauantai
+      ex Rive 5x65% 5x70% 2x75%
+      ex Ty-veto 5x65% 5x70% 4x75% 2x4x80% 5x75%
+      ex "YT pukeilta" 3x80% 3x85% 3x90% 3x95%
+
     session Sunnuntai
 
   cycle "Viikko 5 (Voima)"
     session Maanantai
+      ex "Te allemeno nivusilta + vala" 5x2+2x40%
+      ex "Tempaus + tempaus riipusta AP + vala"
+      ex "Te-veto"
+      ex "Kyykky"
+      ex "Pystäri"
+
     session Tiistai
+      ex jumppa
+
     session Keskiviikko
+      ex "Rive allemeno nivusilta + pystäri-yt saksiin"
+      ex "Rive + Rive riipusta AP + YT"
+      ex "Ty-veto"
+      ex "E-kyykky"
+
     session Torstai
+      ex jumppa
+
     session Perjantai
+      ex "Raaka-te + allepudotus niskalta + vala"
+      ex "Tempaus pukeilta YP"
+      ex Te-veto
+      ex Kyykky
+
     session Lauantai
+      ex "YT kyykkyyn + työntövala"
+      ex "Rive pukeilta AP"
+      ex "Ty-veto"
+      ex "YT-pukeilta"
+
     session Sunnuntai
 
   cycle "Viikko 6 (Voima)"
