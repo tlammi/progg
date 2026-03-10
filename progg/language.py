@@ -92,7 +92,7 @@ class Mt(Transformer):
 
 
 def parse(s: str) -> dm.Program:
-    return Mt().transform(Lark(_GRAMMAR, start="program").parse(s))
+    return Mt().transform(Lark(_GRAMMAR, start="program", parser="lalr").parse(s))
 
 
 
