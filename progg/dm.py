@@ -101,3 +101,19 @@ class Cycle:
 class Program:
     name: str
     cycles: list[Cycle]
+
+    def session_reps(self) -> list[int]:
+        out = []
+        for cycle in self.cycles:
+            for session in cycle.sessions:
+                out.append(session.total_reps())
+        return out
+
+    def session_volumes(self, unit = "") -> list[float]:
+        out = []
+        for cycle in self.cycles:
+            for sess in cycle.sessions:
+                out.append(sess.volume(unit=unit))
+        return out
+
+
