@@ -135,33 +135,37 @@ program "Ohjelma 1"
     session Maanantai
       ex "Te allemeno nivusilta + vala" 5x2+2x40%
       ex "Tempaus + tempaus riipusta AP + vala"
-      ex "Te-veto"
-      ex "Kyykky"
+        2+2+1x65% 2+1+1x75% 2x1+1+1x80% 1+1+1x85%
+      ex "Te-veto" 3x85% 2x90% 2x95%
+      ex "Kyykky" 1x75% 1x80% 1x85% 1x90% 1x95% 4x3x80%
       ex "Pystäri"
 
     session Tiistai
       ex jumppa
 
     session Keskiviikko
-      ex "Rive allemeno nivusilta + pystäri-yt saksiin"
+      ex "Rive allemeno nivusilta + pystäri-yt saksiin" 5x2+2x40%
       ex "Rive + Rive riipusta AP + YT"
-      ex "Ty-veto"
-      ex "E-kyykky"
+        2x1+2+1x70% 2x1+1+1x75% 1+1+1x80% 1+1+1x85%
+      ex "Ty-veto" 3x85% 2x90% 1x95% 1x100%
+      ex "E-kyykky" 1x75% 1x80% 1x85% 1x90% 1x95% 5x2x85%
 
     session Torstai
       ex jumppa
 
     session Perjantai
       ex "Raaka-te + allepudotus niskalta + vala"
+        5x2+2+2x40%
       ex "Tempaus pukeilta YP"
-      ex Te-veto
-      ex Kyykky
+        2x70% 2x75% 1x80% 1x85% 2x1x80%
+      ex "Te-veto" 3x85% 2x90% 2x95%
+      ex Kyykky 1x75% 1x80% 1x85% 1x90% 1x95% 4x3x80%
 
     session Lauantai
-      ex "YT kyykkyyn + työntövala"
-      ex "Rive pukeilta AP"
-      ex "Ty-veto"
-      ex "YT-pukeilta"
+      ex "YT kyykkyyn + työntövala" 5x2+2x40%
+      ex "Rive pukeilta AP" 3x70% 2x75% 2x80% 1x85% 1x90% 1x95% 2x1x90%
+      ex "Ty-veto" 3x85% 2x90% 1x95% 1x100%
+      ex "YT-pukeilta" 2x90% 2x95% 1x100% 1x105% AMRAP
 
     session Sunnuntai
 
