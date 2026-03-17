@@ -58,8 +58,14 @@ def _do_session_statistics(spec: dm.Program, fig):
     ax1.legend(h1+h2, l1+l2)
 
 def _do_cycle_statistics(spec: dm.Program, fig):
-    ax = fig.add_subplot(122)
-    ax.plot([1,2,3], [1,2,3])
+    volumes = [c.volume(unit="%") for c in spec.cycles]
+    reps = [c.total_reps() for c in spec.cycles]
+    xs1 = [x*2 for x in range(len(volumes))]
+    xs2 = [x+1 for x in xs1]
+    ax1 = fig.add_subplot(122)
+    ax1.bar(xs1, volumes)
+    ax2 = ax1.twinx()
+    ax2.bar(xs2, reps, color="r")
 
 
 def _do_statistics(spec: dm.Program):
