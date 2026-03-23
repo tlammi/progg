@@ -67,13 +67,13 @@ program "{{prog}}"
     {{torstai}}
 
     session Perjantai
-      ex "Te-veto pukeilta AP" 5x60% 5x65% 2x5x70% 2x5x75% 2x5x80%
+      ex "Te-veto pukeilta AP" 5x60% 5x70% 2x4x80% 4x3x90%
       ex "Kyykky" 1x75% 1x80% 1x85% 1x90% 1x95% 2x3x80% 4x10x65%
       ex Leuat 3x10
 
     session Lauantai
       ex Rive 5x65% 5x70% 3x2x75%
-      ex "Ty-veto pukeilta AP" 5x65% 5x70% 4x75% 4x80%
+      ex "Ty-veto pukeilta AP" 5x60% 5x70% 2x4x80% 4x3x90%
       ex Etukyykky 1x75% 1x80% 1x85% 1x90% 2x3x80% 4x6x75%
       ex "YT pukeilta" 3x80% 3x85% 3x90% 3x3x95%
 
@@ -101,16 +101,16 @@ program "{{prog}}"
     {{torstai}}
 
     session Perjantai
-      ex "Te-veto" 5x60% 5x65% 2x5x70% 2x5x75% 5x80%
+      ex "Te-veto pukeilta AP" 5x60% 5x70% 2x4x80% 4x3x90%
       ex "Kyykky" 1x75% 1x80% 1x85% 1x90% 1x95% 2x3x80% 4x10x65%
-      ex "Te-veto korokkeelta" 5x60% 5x65% 5x70%
+      ex "Te-veto päkiät korokkeella" 5x60% 5x65% 5x70%
       ex Leuat 3x10
 
     session Lauantai
       ex Rive 5x65% 5x70% 3x2x75%
-      ex Ty-veto 5x65% 5x70% 4x75% 4x80%
+      ex "Ty-veto pukeilta AP" 5x60% 5x70% 2x4x80% 4x3x90%
       ex Etukyykky 1x75% 1x80% 1x85% 1x90% 2x3x80% 4x6x75%
-      ex "Ty-veto korokkeelta" 4x60% 4x65% 4x70%
+      ex "Ty-veto päkiät korokkeella" 4x60% 4x65% 4x70%
       ex "YT pukeilta" 3x80% 3x85% 3x90% 3x3x95%
 
     session Sunnuntai
@@ -192,8 +192,7 @@ program "{{prog}}"
       ex "Kyykky" 1x75% 1x80% 1x85% 1x90% 1x95% 4x3x80%
       ex "Pystäri" 1x70% 1x80% 1x90% 1x95% 3x3x85%
 
-    session Tiistai
-      ex jumppa
+     {{tiistai}}
 
     session Keskiviikko
       ex "Rive allemeno nivusilta + pystäri-yt saksiin" 5x2+2x40%
@@ -202,8 +201,7 @@ program "{{prog}}"
       ex "Ty-veto" 3x85% 2x90% 1x95% 1x100% 4x1x105%
       ex "E-kyykky" 1x75% 1x80% 1x85% 1x90% 1x95% 5x2x85%
 
-    session Torstai
-      ex jumppa
+     {{torstai}}
 
     session Perjantai
       ex "Raaka-te + allepudotus niskalta + vala"
@@ -230,8 +228,7 @@ program "{{prog}}"
       ex "Kyykky" 1x75% 1x80% 1x85% 1x90% 1x95% 4x3x80%
       ex "Pystäri" 1x70% 1x80% 1x90% 1x95% 3x3x85%
 
-    session Tiistai
-      ex jumppa
+    {{tiistai}}
 
     session Keskiviikko
       ex "Rive allemeno nivusilta + pystäri-yt saksiin" 5x2+2x40%
@@ -240,8 +237,7 @@ program "{{prog}}"
       ex "Ty-veto" 3x85% 2x90% 1x95% 1x100%
       ex "E-kyykky" 1x75% 1x80% 1x85% 1x90% 1x95% 5x2x85%
 
-    session Torstai
-      ex jumppa
+    {{torstai}}
 
     session Perjantai
       ex "Raaka-te + allepudotus niskalta + vala"
@@ -265,21 +261,25 @@ program "{{prog}}"
       ex "Raaka-te puolikyykkyyn + Te" 1x2+1x60% 1x1+1x70% 1x1+1x80% 1x1+1x85%
       ex Te-veto 3x60% 3x70% 3x80% 1x90%
       ex "Kyykky" 1x60% 1x70% 1x80% 1x85% 1x90% 1x95% 2x3x85%
-    session Tiistai
-      ex Jumppa
+
+    {{tiistai}}
+
     session Keskiviikko
       ex "Rive allekääntö nivusilta" 5x3x40%
       ex "Raakarive + rive + YT" 2+2+2x60% 2+1+2x65% 1+1+1x70% 2x1+1+1x75%
       ex Ty-veto 3x60% 3x70% 3x80% 1x90%
       ex "Etukyykky" 1x60% 1x70% 1x80% 1x85% 1x90% 1x95% 3x2x85%
-    session Torstai
-      ex Jumppa
+
+    {{torstai}}
+
     session Perjantai
-      ex Jumppa
+
     session Lauantai
       ex Tempaus 1x60% 1x70% 1x75% 1x80% 1x85%
+      ex "Te-veto pukeilta YP" 3x60% 3x75% 2x80% 1x85%
       ex Työntö 1x60% 1x70% 1x75% 1x80% 1x85%
-      ex "YT pukeilta"
+      ex "YT pukeilta" 3x60% 3x70% 3x80% 2x90% 2x95%
+
     session Sunnuntai
 
   cycle "Viikko 9 (Teho)"
