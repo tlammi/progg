@@ -46,9 +46,11 @@ class SgTransformer(Transformer):
             return dm.SetGroup(children[0], children[1], "")
         return dm.SetGroup(1, children[0], children[1])
 
+_SG_PARSER = Lark(_SET_GROUP_GRAMMAR, start="spec")
+_SG_TRANS = SgTransformer()
 
 def parse_set_group(s: str) -> dm.SetGroup:
-    return SgTransformer().transform(Lark(_SET_GROUP_GRAMMAR, start="spec").parse(s))
+    return _SG_TRANS.transform(_SG_PARSER.parse(s))
 
 _GRAMMAR = r"""
 
