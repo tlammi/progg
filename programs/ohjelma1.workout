@@ -261,6 +261,7 @@ program "{{prog}}"
       ex "Raaka-te puolikyykkyyn + Te" 1x2+1x60% 1x1+1x70% 1x1+1x80% 1x1+1x85%
       ex Te-veto 3x60% 3x70% 3x80% 1x90%
       ex "Kyykky" 1x60% 1x70% 1x80% 1x85% 1x90% 1x95% 2x3x85%
+      ex Pystäri
 
     {{tiistai}}
 
@@ -269,6 +270,7 @@ program "{{prog}}"
       ex "Raakarive + rive + YT" 2+2+2x60% 2+1+2x65% 1+1+1x70% 2x1+1+1x75%
       ex Ty-veto 3x60% 3x70% 3x80% 1x90%
       ex "Etukyykky" 1x60% 1x70% 1x80% 1x85% 1x90% 1x95% 3x2x85%
+      ex Vapu
 
     {{torstai}}
 
@@ -284,8 +286,14 @@ program "{{prog}}"
 
   cycle "Viikko 9 (Teho)"
     session Maanantai
+      ex Tempaus 1x70% 1x75% 1x80% 1x85% 1x90% 1x95% 2x2x85%
+      ex Te-veto 3x70% 2x80% 1x90% 1x95% 3x1x90%
+      ex "Kyykky" 1x60% 1x70% 1x80% 1x85% 1x90% 1x95% 2x1x90%
     session Tiistai
     session Keskiviikko
+      ex Työntö 1x70% 1x80% 1x90% 1x95% 2x2x85%
+      ex Ty-veto 3x80% 2x90% 1x100% 1x105% 1x110% 3x1x100%
+      ex "Etukyykky" 1x60% 1x70% 1x80% 1x85% 1x90% 1x95% 2x1x90%
     session Torstai
     session Perjantai
     session Lauantai
