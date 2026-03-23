@@ -248,13 +248,15 @@ program "Ohjelma 1"
   cycle "Viikko 8 (Lepo)"
     session Maanantai
       ex "Te allemeno nivusilta" 5x3x40%
-      ex "Raaka-te puolikyykkyyn + Te"
+      ex "Raaka-te puolikyykkyyn + Te" 1x2+1x60% 1x1+1x70% 1x1+1x80% 1x1+1x85%
+      ex Te-veto 3x60% 3x70% 3x80% 1x90%
       ex "Kyykky" 1x60% 1x70% 1x80% 1x85% 1x90% 1x95% 2x3x85%
     session Tiistai
       ex Jumppa
     session Keskiviikko
       ex "Rive allekääntö nivusilta" 5x3x40%
-      ex "Raakarive + rive + YT"
+      ex "Raakarive + rive + YT" 2+2+2x60% 2+1+2x65% 1+1+1x70% 2x1+1+1x75%
+      ex Ty-veto 3x60% 3x70% 3x80% 1x90%
       ex "Etukyykky" 1x60% 1x70% 1x80% 1x85% 1x90% 1x95% 3x2x85%
     session Torstai
       ex Jumppa
@@ -263,6 +265,7 @@ program "Ohjelma 1"
     session Lauantai
       ex Tempaus 1x60% 1x70% 1x75% 1x80% 1x85%
       ex Työntö 1x60% 1x70% 1x75% 1x80% 1x85%
+      ex "YT pukeilta"
     session Sunnuntai
 
   cycle "Viikko 9 (Teho)"
@@ -274,6 +277,7 @@ program "Ohjelma 1"
     session Lauantai
       ex Tempaus nousu
       ex Työntö nousu
+      ex "YT pukeilta"
     session Sunnuntai
 
   cycle "Viikko 10 (Teho)"
