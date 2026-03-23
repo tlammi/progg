@@ -1,4 +1,3 @@
-{% set prog = "Ohjelma 1" %}
 
 {% set tiistai = '
   session Tiistai
@@ -18,7 +17,7 @@
     ex "Etukyykky kahvakuula sivulla"'
 %}
 
-program "{{prog}}"
+program "Ohjelma 1 (Beta)"
   cycle "Viikko 1 (Voluumi)"
     session Maanantai
       ex "Voimatempaus sylistä" 3x5x40%
@@ -93,7 +92,7 @@ program "{{prog}}"
 
     session Keskiviikko
       ex Ty-veto 2x5x65% 2x5x70% 4x5x75% 4x5x80%
-      ex Etukyykky 1x75% 1x80% 1x85% 1x90% 2x3x80% 4x6x75%
+      ex Etukyykky 1x75% 1x80% 1x85% 1x90% 1x95% 2x3x80% 4x6x75%
       ex Vapu 5x75% 4x80% 3x3x85%
       ex "Etukyykky stopilla" 2x4x60% 2x4x65% 4x70%
       ex "Ty-veto stopilla AP" 5x60% 5x70% 2x5x80%
