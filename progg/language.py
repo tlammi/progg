@@ -1,5 +1,7 @@
 from lark import Lark, Tree, Transformer
 
+import jinja2
+
 from . import dm
 
 _SET_GROUP_GRAMMAR = r"""
@@ -92,7 +94,8 @@ class Mt(Transformer):
 
 
 def parse(s: str) -> dm.Program:
-    return Mt().transform(Lark(_GRAMMAR, start="program", parser="lalr").parse(s))
+    tmpl = jinja2.Template(s)
+    return Mt().transform(Lark(_GRAMMAR, start="program", parser="lalr").parse(tmpl.render()))
 
 
 
