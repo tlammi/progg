@@ -8,7 +8,11 @@ program "Ohjelma 1"
       ex "Pystäri" 1x65% 1x75% 1x80% 1x85% 3x3x75%
 
     session Tiistai
-      ex jumppa
+      ex Penkki
+      ex Hyljesoutu
+      ex Askelkyykky
+      ex "Yhden jalan RDL"
+      ex "Voimarulla"
 
     session Keskiviikko
       ex Ty-veto 5x65% 5x70% 4x5x75%
@@ -16,11 +20,15 @@ program "Ohjelma 1"
       ex Vapu 5x75% 4x80% 3x3x85%
 
     session Torstai
-      ex jumppa
+      ex "Ranskalainen punnerrus"
+      ex Hauiskääntö
+      ex Lantionnostot
+      ex "Askelkyykky ATG"
+      ex "Etukyykky kahvakuula sivulla"
 
     session Perjantai
       ex "Te-veto" 5x60% 5x65% 5x70% 2x5x75%
-      ex "Kyykky" 1x75% 1x80% 1x85% 1x90% 2x3x80% 4x10x65%
+      ex "Kyykky" 1x75% 1x80% 1x85% 1x90% 1x95% 2x3x80% 4x10x65%
       ex Leuat 3x10
 
     session Lauantai
@@ -40,7 +48,11 @@ program "Ohjelma 1"
       ex "Pystäri" 1x65% 1x75% 1x80% 1x85% 3x3x75%
 
     session Tiistai
-      ex jumppa
+      ex Penkki
+      ex Hyljesoutu
+      ex Askelkyykky
+      ex "Yhden jalan RDL"
+      ex "Voimarulla"
 
     session Keskiviikko
       ex Ty-veto 2x5x65% 2x5x70% 4x5x75% 4x5x80%
@@ -48,11 +60,15 @@ program "Ohjelma 1"
       ex Vapu 5x75% 4x80% 3x3x85%
 
     session Torstai
-      ex jumppa
+      ex "Ranskalainen punnerrus"
+      ex Hauiskääntö
+      ex Lantionnostot
+      ex "Askelkyykky ATG"
+      ex "Etukyykky kahvakuula sivulla"
 
     session Perjantai
       ex "Te-veto" 5x60% 5x65% 2x5x70% 2x5x75% 2x5x80%
-      ex "Kyykky" 1x75% 1x80% 1x85% 1x90% 2x3x80% 4x10x65%
+      ex "Kyykky" 1x75% 1x80% 1x85% 1x90% 1x95% 2x3x80% 4x10x65%
       ex Leuat 3x10
 
     session Lauantai
@@ -74,20 +90,29 @@ program "Ohjelma 1"
       ex "Te-veto stopilla AP" 5x55% 5x60% 4x65% 3x3x70%
 
     session Tiistai
-      ex jumppa
+      ex Penkki
+      ex Hyljesoutu
+      ex Askelkyykky
+      ex "Yhden jalan RDL"
+      ex "Voimarulla"
 
     session Keskiviikko
       ex Ty-veto 2x5x65% 2x5x70% 4x5x75% 4x5x80%
       ex Etukyykky 1x75% 1x80% 1x85% 1x90% 2x3x80% 4x6x75%
       ex Vapu 5x75% 4x80% 3x3x85%
-      ex "Etukyykky stopilla" 2x4x60% 2x4x65%  4x70%
+      ex "Etukyykky stopilla" 2x4x60% 2x4x65% 4x70%
+      ex "Ty-veto stopilla AP" 5x60% 5x70% 2x5x80%
 
     session Torstai
-      ex jumppa
+      ex "Ranskalainen punnerrus"
+      ex Hauiskääntö
+      ex Lantionnostot
+      ex "Askelkyykky ATG"
+      ex "Etukyykky kahvakuula sivulla"
 
     session Perjantai
       ex "Te-veto" 5x60% 5x65% 2x5x70% 2x5x75% 5x80%
-      ex "Kyykky" 1x75% 1x80% 1x85% 1x90% 2x3x80% 4x10x65%
+      ex "Kyykky" 1x75% 1x80% 1x85% 1x90% 1x95% 2x3x80% 4x10x65%
       ex "Te-veto korokkeelta" 5x60% 5x65% 5x70%
       ex Leuat 3x10
 
@@ -109,7 +134,11 @@ program "Ohjelma 1"
       ex "Pystäri" 1x65% 1x75% 1x80% 1x85% 3x3x75%
 
     session Tiistai
-      ex jumppa
+      ex Penkki
+      ex Hyljesoutu
+      ex Askelkyykky
+      ex "Yhden jalan RDL"
+      ex "Voimarulla"
 
     session Keskiviikko
       ex Ty-veto 5x65% 5x70% 2x5x75%
@@ -117,7 +146,11 @@ program "Ohjelma 1"
       ex Vapu 5x75% 4x80% 3x3x85%
 
     session Torstai
-      ex jumppa
+      ex "Ranskalainen punnerrus"
+      ex Hauiskääntö
+      ex Lantionnostot
+      ex "Askelkyykky ATG"
+      ex "Etukyykky kahvakuula sivulla"
 
     session Perjantai
       ex "Te-veto" 5x60% 5x65% 5x70% 5x75%
@@ -141,7 +174,11 @@ program "Ohjelma 1"
       ex "Pystäri" 1x70% 1x80% 1x90% 1x95% 3x3x85%
 
     session Tiistai
-      ex jumppa
+      ex Penkki
+      ex Hyljesoutu
+      ex Askelkyykky
+      ex "Yhden jalan RDL"
+      ex "Voimarulla"
 
     session Keskiviikko
       ex "Rive allemeno nivusilta + pystäri-yt saksiin" 5x2+2x40%
@@ -151,7 +188,11 @@ program "Ohjelma 1"
       ex "E-kyykky" 1x75% 1x80% 1x85% 1x90% 1x95% 5x2x85%
 
     session Torstai
-      ex jumppa
+      ex "Ranskalainen punnerrus"
+      ex Hauiskääntö
+      ex Lantionnostot
+      ex "Askelkyykky ATG"
+      ex "Etukyykky kahvakuula sivulla"
 
     session Perjantai
       ex "Raaka-te + allepudotus niskalta + vala"
