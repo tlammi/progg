@@ -32,12 +32,19 @@ class SetGroup:
     what: str
 
     def total_reps(self) -> int:
+        # TODO: Remove this hack, unit should come e.g. as an argument
+        if _unit_or_zero(self.what, unit="%") < 60.0:
+            return 0
         res = sum(self.reps)
         res *= self.count
         return res
 
     def volume(self, unit: str = "") -> float:
-        return self.total_reps() * _unit_or_zero(self.what, unit)
+        val = _unit_or_zero(self.what, unit)
+        if val < 60.0:
+            return 0.0
+        return self.total_reps() * val
+
 
     def load(self, unit: str = "") -> list[tuple[float, int]]:
         return [(_unit_or_zero(self.what, unit), self.total_reps())]
