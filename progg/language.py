@@ -94,8 +94,9 @@ class Mt(Transformer):
 
 
 def parse(s: str) -> dm.Program:
+    lines = s.split("\n")
+    lines = [l for l in lines if not l.lstrip().startswith("#")]
+    s = "\n".join(lines)
     tmpl = jinja2.Template(s)
     return Mt().transform(Lark(_GRAMMAR, start="program", parser="lalr").parse(tmpl.render()))
-
-
 
