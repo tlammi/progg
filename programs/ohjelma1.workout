@@ -136,9 +136,9 @@ program "Ohjelma 1"
       ex "Te allemeno nivusilta + vala" 5x2+2x40%
       ex "Tempaus + tempaus riipusta AP + vala"
         2+2+1x65% 2+1+1x75% 2x1+1+1x80% 1+1+1x85%
-      ex "Te-veto" 3x85% 2x90% 2x95%
+      ex "Te-veto" 3x85% 2x90% 4x2x95%
       ex "Kyykky" 1x75% 1x80% 1x85% 1x90% 1x95% 4x3x80%
-      ex "Pystäri"
+      ex "Pystäri" 1x70% 1x80% 1x90% 1x95% 3x3x85%
 
     session Tiistai
       ex jumppa
@@ -165,35 +165,104 @@ program "Ohjelma 1"
       ex "YT kyykkyyn + työntövala" 5x2+2x40%
       ex "Rive pukeilta AP" 3x70% 2x75% 2x80% 1x85% 1x90% 1x95% 2x1x90%
       ex "Ty-veto" 3x85% 2x90% 1x95% 1x100%
-      ex "YT-pukeilta" 2x90% 2x95% 1x100% 1x105% AMRAP
+      ex "YT pukeilta" 2x90% 2x95% 1x100% 1x105% AMRAP
 
     session Sunnuntai
 
   cycle "Viikko 6 (Voima)"
     session Maanantai
+      ex "Te allemeno nivusilta + vala" 5x2+2x40%
+      ex "Te-veto + Tempaus + tempaus riipusta AP"
+        2+2+1x65% 2+1+1x75% 2x1+1+1x80% 2x1+1+1x85%
+      ex "Te-veto" 3x85% 2x90% 2x95% 3x2x100%
+      ex "Kyykky" 1x75% 1x80% 1x85% 1x90% 1x95% 4x3x80%
+      ex "Pystäri" 1x70% 1x80% 1x90% 1x95% 3x3x85%
+
     session Tiistai
+      ex jumppa
+
     session Keskiviikko
+      ex "Rive allemeno nivusilta + pystäri-yt saksiin" 5x2+2x40%
+      ex "Rive + Rive riipusta AP + YT"
+        2x1+2+1x70% 2x1+1+1x75% 1+1+1x80% 1+1+1x85%
+      ex "Ty-veto" 3x85% 2x90% 1x95% 1x100% 4x1x105%
+      ex "E-kyykky" 1x75% 1x80% 1x85% 1x90% 1x95% 5x2x85%
+
     session Torstai
+      ex jumppa
+
     session Perjantai
+      ex "Raaka-te + allepudotus niskalta + vala"
+        5x2+2+2x40%
+      ex "Tempaus pukeilta YP"
+        2x70% 2x75% 1x80% 1x85% 2x1x80%
+      ex "Te-veto" 3x85% 2x90% 4x2x95%
+      ex Kyykky 1x75% 1x80% 1x85% 1x90% 1x95% 3x3x85%
+
     session Lauantai
+      ex "YT kyykkyyn + työntövala" 5x2+2x40%
+      ex "Rive riipusta AP" 3x70% 2x75% 2x80% 1x85% 1x90% 1x95% 2x1x90%
+      ex "Ty-veto" 3x85% 2x90% 1x95% 1x100% 4x1x105%
+      ex "YT pukeilta" 2x90% 2x95% 1x100% 1x105% AMRAP
+
     session Sunnuntai
 
   cycle "Viikko 7 (Voima)"
     session Maanantai
+      ex "Te allemeno nivusilta + vala" 5x2+2x40%
+      ex "Tempaus + tempaus riipusta AP + vala"
+        2+2+1x65% 2+1+1x75% 2x1+1+1x80% 1+1+1x85%
+      ex "Te-veto" 3x85% 2x90% 2x95% 2x100% 2x105% 1x110% 3x3x100%
+      ex "Kyykky" 1x75% 1x80% 1x85% 1x90% 1x95% 4x3x80%
+      ex "Pystäri" 1x70% 1x80% 1x90% 1x95% 3x3x85%
+
     session Tiistai
+      ex jumppa
+
     session Keskiviikko
+      ex "Rive allemeno nivusilta + pystäri-yt saksiin" 5x2+2x40%
+      ex "Rive + Rive riipusta AP + YT"
+        2x1+2+1x70% 2x1+1+1x75% 1+1+1x80% 1+1+1x85%
+      ex "Ty-veto" 3x85% 2x90% 1x95% 1x100%
+      ex "E-kyykky" 1x75% 1x80% 1x85% 1x90% 1x95% 5x2x85%
+
     session Torstai
+      ex jumppa
+
     session Perjantai
+      ex "Raaka-te + allepudotus niskalta + vala"
+        5x2+2+2x40%
+      ex "Tempaus pukeilta YP"
+        2x70% 2x75% 1x80% 1x85% 2x1x80%
+      ex "Te-veto" 3x85% 2x90% 2x95%
+      ex Kyykky 1x75% 1x80% 1x85% 1x90% 1x95% 3x3x85%
+
     session Lauantai
+      ex "YT kyykkyyn + työntövala" 5x2+2x40%
+      ex "Rive pukeilta AP" 3x70% 2x75% 2x80% 1x85% 1x90% 1x95% 2x1x90%
+      ex "Ty-veto" 3x85% 2x90% 1x95% 1x100%
+      ex "YT pukeilta" 2x90% 2x95% 1x100% 1x105% AMRAP
+
     session Sunnuntai
 
   cycle "Viikko 8 (Lepo)"
     session Maanantai
+      ex "Te allemeno nivusilta" 5x3x40%
+      ex "Raaka-te puolikyykkyyn + Te"
+      ex "Kyykky" 1x60% 1x70% 1x80% 1x85% 1x90% 1x95% 2x3x85%
     session Tiistai
+      ex Jumppa
     session Keskiviikko
+      ex "Rive allekääntö nivusilta" 5x3x40%
+      ex "Raakarive + rive + YT"
+      ex "Etukyykky" 1x60% 1x70% 1x80% 1x85% 1x90% 1x95% 3x2x85%
     session Torstai
+      ex Jumppa
     session Perjantai
+      ex Jumppa
     session Lauantai
+      ex Tempaus 1x60% 1x70% 1x75% 1x80% 1x85%
+      ex Työntö 1x60% 1x70% 1x75% 1x80% 1x85%
     session Sunnuntai
 
   cycle "Viikko 9 (Teho)"
@@ -203,23 +272,35 @@ program "Ohjelma 1"
     session Torstai
     session Perjantai
     session Lauantai
+      ex Tempaus nousu
+      ex Työntö nousu
     session Sunnuntai
 
   cycle "Viikko 10 (Teho)"
     session Maanantai
     session Tiistai
     session Keskiviikko
+      ex Työntö 1x60% 1x75% 1x85% 1x90% 1x95% "1xAlkurauta"
     session Torstai
     session Perjantai
     session Lauantai
+      ex Tempaus 1x80% 1x85% 1x90% 1x95% "2x1xAlkurauta + 1kg"
     session Sunnuntai
 
   cycle "Viikko 10 (Kisa)"
     session Maanantai
+      ex Tempaus "1x80% alkurauta"
+      ex Työntö "1x80% alkurauta"
+      ex Kyykky "1x120% Työntö alkurauta"
     session Tiistai
     session Keskiviikko
+      ex Tempaus "1x60% alkurauta"
+      ex Työntö "1x60% alkurauta"
+      ex Etukyykky "1xTyöntö alkurauta"
     session Torstai
     session Perjantai
+      ex Kyykky "1xTyöntö alkurauta"
     session Lauantai
+      ex Kisa
     session Sunnuntai
 
