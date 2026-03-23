@@ -1,10 +1,13 @@
 import argparse
+
+from dataclasses import dataclass
 from pathlib import Path
 
 from .render import PdfRenderer
 from . import language, dm
 
 from matplotlib import pyplot as plt
+from matplotlib.axes import Axes
 
 
 _SAMPLE_PROGRAM = r"""program "Sample Program"
@@ -38,39 +41,88 @@ def _parse_cli():
     return p.parse_args()
 
 
+@dataclass
+class MultiBarData:
+    axes: Axes
+    values: list
+    kwargs: dict
+
+def _do_multi_set_bar_graph(*data: MultiBarData):
+    xs = []
+    count = len(data)
+    for i, v in enumerate(data):
+        new = [j*count+i for j in range(len(v.values))]
+        xs.append(new)
+
+    for x, d in zip(xs, data):
+        d.axes.bar(x, d.values, **d.kwargs)
+
+    hs = []
+    ls = []
+    for d in data:
+        handle, label = d.axes.get_legend_handles_labels()
+        hs.extend(handle)
+        ls.extend(label)
+    data[0].axes.legend(hs, ls)
+
 def _do_session_statistics(spec: dm.Program, fig):
     volumes = spec.session_volumes(unit="%")
-    xs1 = [i*2 for i in range(len(volumes))]
-    xs2 = [x+1 for x in xs1]
+    fig.subplots_adjust(right=0.75)
     reps = spec.session_reps()
-
-    ax1 = fig.add_subplot(121)
+    ax1 = fig.add_subplot(111)
     ax1.set_title("Sessions")
-    ax2 = ax1.twinx()
-
-    ax1.bar(xs1, volumes, label="Volume")
     ax1.set_ylabel("volume")
-    ax2.bar(xs2, reps, color="r", label="Reps")
+    ax2 = ax1.twinx()
     ax2.set_ylabel("reps")
-    ax2.tick_params(axis="y", color="r")
-    h1, l1 = ax1.get_legend_handles_labels()
-    h2, l2 = ax2.get_legend_handles_labels()
-    ax1.legend(h1+h2, l1+l2)
+
+    ax3 = ax1.twinx()
+    ax3.set_ylabel("avg load")
+
+    ax3.spines.right.set_position(("axes", 1.2))
+    ax3.set(ylim=(50, 100))
+
+    loads = []
+    for c in spec.cycles:
+        for sess in c.sessions:
+            loads.append(sess.avg_load(unit="%"))
+
+    _do_multi_set_bar_graph(
+        MultiBarData(axes=ax1, values=volumes, kwargs={"label": "Volume"}),
+        MultiBarData(axes=ax2, values=reps, kwargs={"label": "Reps", "color": "r"}),
+        MultiBarData(axes=ax3, values=loads, kwargs={"label": "Avg Load", "color": "g"})
+    )
 
 def _do_cycle_statistics(spec: dm.Program, fig):
     volumes = [c.volume(unit="%") for c in spec.cycles]
+    fig.subplots_adjust(right=0.75)
     reps = [c.total_reps() for c in spec.cycles]
-    xs1 = [x*2 for x in range(len(volumes))]
-    xs2 = [x+1 for x in xs1]
-    ax1 = fig.add_subplot(122)
-    ax1.bar(xs1, volumes)
+    ax1 = fig.add_subplot(111)
+    ax1.set_title("Sessions")
+    ax1.set_ylabel("volume")
     ax2 = ax1.twinx()
-    ax2.bar(xs2, reps, color="r")
+    ax2.set_ylabel("reps")
+
+    ax3 = ax1.twinx()
+    ax3.set_ylabel("avg load")
+
+    ax3.spines.right.set_position(("axes", 1.2))
+    ax3.set(ylim=(50, 100))
+
+    loads = []
+    for c in spec.cycles:
+        loads.append(c.avg_load(unit="%"))
+
+    _do_multi_set_bar_graph(
+        MultiBarData(axes=ax1, values=volumes, kwargs={"label": "Volume"}),
+        MultiBarData(axes=ax2, values=reps, kwargs={"label": "Reps", "color": "r"}),
+        MultiBarData(axes=ax3, values=loads, kwargs={"label": "Avg Load", "color": "g"})
+    )
 
 
 def _do_statistics(spec: dm.Program):
     fig = plt.figure()
     _do_session_statistics(spec, fig)
+    fig = plt.figure()
     _do_cycle_statistics(spec, fig)
     plt.show()
     raise SystemExit(0)
