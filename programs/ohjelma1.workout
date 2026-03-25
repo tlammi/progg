@@ -149,7 +149,8 @@ program "Ohjelma 1 (Beta)"
       ex "Te allemeno nivusilta + vala" 5x2+2x40%
       ex "Tempaus + tempaus riipusta AP + vala"
         2+2+1x65% 2+1+1x75% 2x1+1+1x80% 1+1+1x85%
-      ex "Te-veto" 3x80% 3x90% 2x95% 1x100% 1x105% 4x2x95%
+      ex "Te-veto" 3x80% 3x90% 2x95% 1x100% 1x105% 2x2x95%
+      ex "Te-veto päkiät korokkeella" 2x80% 2x90% 1x95%
       ex "Kyykky" 1x75% 1x80% 1x85% 1x90% 1x95% 3x3x85%
       ex "Pystäri" 1x70% 1x80% 1x90% 1x95% 3x3x85%
 
