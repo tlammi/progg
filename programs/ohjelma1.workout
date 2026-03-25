@@ -52,15 +52,15 @@ program "Ohjelma 1 (Beta)"
   cycle "Viikko 2 (Voluumi)"
     session Maanantai
       ex "Voimatempaus sylistä" 3x5x40%
-      ex "Raaka-te puolikyykkyyn" 5x55% 5x60% 2x5x65%
+      ex "Raaka-te puolikyykkyyn" 5x55% 5x60% 3x5x65%
       ex "Te-veto" 5x60% 5x65% 5x70% 5x75% 5x80%
-      ex "Kyykky" 1x75% 1x80% 1x85% 1x90% 2x3x80% 4x8x70%
+      ex "Kyykky" 1x75% 1x80% 1x85% 1x90% 2x3x80% 4x9x70%
       ex "Pystäri" 1x65% 1x75% 1x80% 1x85% 3x5x70%
 
     {{tiistai}}
 
     session Keskiviikko
-      ex Ty-veto 5x65% 5x70% 5x75% 4x5x80%
+      ex Ty-veto 5x65% 5x70% 5x75% 5x80% 5x85% 2x5x90%
       ex Etukyykky 1x75% 1x80% 1x85% 1x90% 2x3x80%
       ex Pekkakyykky 4x6x65%
       ex Vapu 5x75% 4x80% 3x85% 2x5x75%
@@ -75,27 +75,26 @@ program "Ohjelma 1 (Beta)"
     session Lauantai
       ex Rive 5x65% 5x70% 3x2x75%
       ex "Ty-veto pukeilta AP" 5x60% 5x70% 2x4x80% 4x3x90%
-      ex Etukyykky 1x75% 1x80% 1x85% 1x90% 2x3x80% 4x6x75%
+      ex Etukyykky 1x75% 1x80% 1x85% 1x90% 1x95% 2x3x80% 4x6x75%
       ex "YT pukeilta" 3x80% 3x85% 3x90% 3x3x95%
 
     session Sunnuntai
 
   cycle "Viikko 3 (Voluumi)"
     session Maanantai
-      ex "Kyykky" 1x75% 1x80% 1x85% 1x90%
       ex "Voimatempaus sylistä" 3x5x40%
-      ex "Raaka-te puolikyykkyyn" 5x55% 5x60% 2x5x65%
-      ex "Te-veto" 5x60% 5x65% 5x70% 5x75%
-      ex "Kyykky" 2x3x80% 2x8x70% 2x8x65%
-      ex "Pystäri" 1x65% 1x75% 1x80% 1x85% 3x3x75%
-      ex "Te-veto stopilla AP" 5x55% 5x60% 4x65% 3x3x70%
+      ex "Raaka-te puolikyykkyyn" 5x55% 5x60% 4x5x65%
+      ex "Te-veto" 5x60% 5x65% 5x70% 5x75% 3x5x80%
+      ex "Kyykky" 1x75% 1x80% 1x85% 1x90% 2x3x80% 4x10x70%
+      ex "Pystäri" 1x65% 1x75% 1x80% 1x85% 3x5x70%
 
     {{tiistai}}
 
     session Keskiviikko
-      ex Ty-veto 2x5x65% 2x5x70% 4x5x75% 4x5x80%
-      ex Etukyykky 1x75% 1x80% 1x85% 1x90% 1x95% 2x3x80% 4x6x75%
-      ex Vapu 5x75% 4x80% 3x3x85%
+      ex Ty-veto 5x65% 5x75% 5x85% 2x5x90% 5x85%
+      ex Etukyykky 1x75% 1x80% 1x85% 1x90% 2x3x80%
+      ex Pekkakyykky 4x6x65%
+      ex Vapu 5x75% 4x80% 3x85% 4x5x75%
       ex "Etukyykky stopilla" 2x4x60% 2x4x65% 4x70%
       ex "Ty-veto stopilla AP" 5x60% 5x70% 2x5x80%
 
@@ -104,14 +103,13 @@ program "Ohjelma 1 (Beta)"
     session Perjantai
       ex "Te-veto pukeilta AP" 5x60% 5x70% 2x4x80% 4x3x90%
       ex "Kyykky" 1x75% 1x80% 1x85% 1x90% 1x95% 2x3x80% 4x10x65%
-      ex "Te-veto päkiät korokkeella" 5x60% 5x65% 5x70%
+      ex "Korkea te-veto sylistä" 5x60% 4x5x65% 3x5x70%
       ex Leuat 3x10
 
     session Lauantai
       ex Rive 5x65% 5x70% 3x2x75%
-      ex "Ty-veto pukeilta AP" 5x60% 5x70% 2x4x80% 4x3x90%
-      ex Etukyykky 1x75% 1x80% 1x85% 1x90% 2x3x80% 4x6x75%
-      ex "Ty-veto päkiät korokkeella" 4x60% 4x65% 4x70%
+      ex "Ty-veto pukeilta YP" 5x60% 5x70% 2x4x80% 4x3x90%
+      ex Etukyykky 1x75% 1x80% 1x85% 1x90% 1x95% 2x3x80% 4x6x75%
       ex "YT pukeilta" 3x80% 3x85% 3x90% 3x3x95%
 
     session Sunnuntai
