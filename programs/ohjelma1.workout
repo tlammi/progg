@@ -161,7 +161,7 @@ program "Ohjelma 1 (Beta)"
         2x1+2+1x70% 2x1+1+1x75% 1+1+1x80% 1+1+1x85%
       ex "Ty-veto" 3x80% 2x90% 2x100% 3x2x105%
       ex "Etukyykky" 1x75% 1x80% 1x85% 1x90% 1x95% 5x2x85%
-      ex Pekkakyykky 4x6x65%
+      ex Pekkakyykky 2x4x75%
 
     {{torstai}}
 
