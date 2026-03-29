@@ -60,7 +60,7 @@ program "Ohjelma 1 (Beta)"
     {{tiistai}}
 
     session Keskiviikko
-      ex Ty-veto 5x65% 5x70% 5x75% 5x80% 5x85% 2x5x90%
+      ex Ty-veto 5x65% 5x70% 5x75% 3x5x80%
       ex Etukyykky 1x75% 1x80% 1x85% 1x90% 2x3x80%
       ex Pekkakyykky 4x6x65%
       ex Vapu 5x75% 4x80% 3x85% 2x5x75%
