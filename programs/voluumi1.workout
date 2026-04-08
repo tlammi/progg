@@ -18,8 +18,8 @@
     ex Hypyt'
 %}
 
-program "Ohjelma 1 (Beta)"
-  cycle "Viikko 1 (Voluumi)"
+program "Voluumi 1 (Beta)"
+  cycle "Viikko 1"
     session Maanantai
       ex "Voimatempaus sylistä" 3x5x40%
       ex "Raaka-te puolikyykkyyn" 5x55% 5x60% 2x5x65%
@@ -49,7 +49,7 @@ program "Ohjelma 1 (Beta)"
 
     session Sunnuntai
 
-  cycle "Viikko 2 (Voluumi)"
+  cycle "Viikko 2"
     session Maanantai
       ex "Voimatempaus sylistä" 3x5x40%
       ex "Raaka-te puolikyykkyyn" 5x55% 5x60% 3x5x65%
@@ -80,7 +80,7 @@ program "Ohjelma 1 (Beta)"
 
     session Sunnuntai
 
-  cycle "Viikko 3 (Voluumi)"
+  cycle "Viikko 3"
     session Maanantai
       ex "Voimatempaus sylistä" 3x5x40%
       ex "Raaka-te puolikyykkyyn" 5x55% 5x60% 4x5x65%

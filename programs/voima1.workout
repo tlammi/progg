@@ -1,0 +1,101 @@
+
+
+{% set tiistai = '
+  session Tiistai
+    ex "Ranskalainen punnerrus"
+    ex Hauiskääntö
+    ex Lantionnostot
+    ex "Askelkyykky ATG"
+    ex "Etukyykky kahvakuula sivulla"
+    ex Hypyt'
+%}
+
+{% set torstai = '
+  session Torstai
+    ex Penkki
+    ex Hyljesoutu
+    ex Askelkyykky
+    ex "Yhden jalan RDL"
+    ex Voimarulla'
+%}
+
+program "Voima 1 (Beta)"
+
+  cycle "Viikko 1"
+    session Maanantai
+      ex "Hidas te-veto + te + vala" 3x3+3+3x40%
+      ex "Raaka-te + te + vala" 2+2+2x70% 2+1+1x75% 3x1+1+1x80%
+      ex "Te-veto" 2x90% 1x100% 1x110% 1x120% 3x1x100%
+      ex "Pystäri" 1x65% 1x75% 1x80% 1x85% 3x3x70%
+
+    {{tiistai}}
+
+    session Keskiviikko
+      ex "Hidas ty-veto + rive allemeno nivusilta + YT kyykkyyn" 3x3+3+3x40%
+      ex "Raaka-rive + YT" 1+1x75% 1+1x80% 1+1x85%
+      ex "Raaka-rive" 1x90% 2x2x80%
+      ex Etukyykky 1x75% 1x80% 1x85% 1x90% 1x95% 2x3x85%
+      ex Pekkakyykky 2x6x65%
+      ex "Ty-veto pukeilta AP" 3x80% 2x90% 1x100% 1x110% 3x2x100%
+      ex "YT pukeilta" 3x70% 3x80% 2x90% 1x100% 1x103% 1x105%
+
+    {{torstai}}
+
+    session Perjantai
+      ex "Ty-veto" 2x90% 1x100% 1x110% 1x120% 3x1x110%
+      ex Vapu 1x75% 1x80% 1x85% 1x90% 1x95% 3x2x90%
+      ex Leuat 3x12
+      ex Juoksu
+
+    session Lauantai
+      ex Tempaus 3x60% 3x70% 2x80% 1x85% 1x90% 2x2x80%
+      ex Työntö 3x60% 3x70% 2x80% 1x85% 1x90% 2x2x80%
+      ex Kyykky 1x75% 1x80% 1x85% 1x90% 1x95% 2x3x85%
+      ex "Te-veto pukeilta AP"
+
+    session Sunnuntai
+
+  cycle "Viikko 2"
+    session Maanantai
+
+    {{tiistai}}
+
+    session Keskiviikko
+
+    {{torstai}}
+
+    session Perjantai
+
+    session Lauantai
+
+    session Sunnuntai
+
+  cycle "Viikko 3"
+    session Maanantai
+
+     {{tiistai}}
+
+    session Keskiviikko
+
+     {{torstai}}
+
+    session Perjantai
+
+    session Lauantai
+
+    session Sunnuntai
+
+  cycle "Viikko 4"
+    session Maanantai
+
+    {{tiistai}}
+
+    session Keskiviikko
+
+    {{torstai}}
+
+    session Perjantai
+
+    session Lauantai
+
+    session Sunnuntai
