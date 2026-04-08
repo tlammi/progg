@@ -35,7 +35,7 @@ program "Voima 1 (Beta)"
       ex "Raaka-rive + YT" 1+1x75% 1+1x80% 1+1x85%
       ex "Raaka-rive" 1x90% 2x2x80%
       ex Etukyykky 1x75% 1x80% 1x85% 1x90% 1x95% 2x3x85%
-      ex Pekkakyykky 2x6x65%
+      ex Pekkakyykky 2x6x60%
       ex "Ty-veto pukeilta AP" 3x80% 2x90% 1x100% 1x110% 3x2x100%
       ex "YT pukeilta" 3x70% 3x80% 2x90% 1x100% 1x103% 1x105%
 
@@ -43,7 +43,7 @@ program "Voima 1 (Beta)"
 
     session Perjantai
       ex "Ty-veto" 2x90% 1x100% 1x110% 1x120% 3x1x110%
-      ex Vapu 1x75% 1x80% 1x85% 1x90% 1x95% 3x2x90%
+      ex Vapu 1x75% 1x80% 1x85% 1x90% 1x95% 3x2x80%
       ex Leuat 3x12
       ex Juoksu
 
