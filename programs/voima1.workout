@@ -37,7 +37,7 @@ program "Voima 1 (Beta)"
       ex Etukyykky 1x75% 1x80% 1x85% 1x90% 1x95% 2x3x85%
       ex Pekkakyykky 2x6x60%
       ex "Ty-veto pukeilta AP" 3x80% 2x90% 1x100% 1x110% 3x2x100%
-      ex "YT pukeilta" 3x70% 3x80% 2x90% 1x100% 1x103% 1x105%
+      ex "YT pukeilta" 3x70% 3x80% 2x90% 1x100% 1x103% 1x105% AMRAP
 
     {{torstai}}
 
@@ -51,22 +51,40 @@ program "Voima 1 (Beta)"
       ex Tempaus 3x60% 3x70% 2x80% 1x85% 1x90% 2x2x80%
       ex Työntö 3x60% 3x70% 2x80% 1x85% 1x90% 2x2x80%
       ex Kyykky 1x75% 1x80% 1x85% 1x90% 1x95% 2x3x85%
-      ex "Te-veto pukeilta AP"
+      ex "Te-veto pukeilta AP" 5x60% 5x70% 4x80% 3x90% 3x100% 3x110% 4x3x90%
 
     session Sunnuntai
 
   cycle "Viikko 2"
     session Maanantai
+      ex "Hidas te-veto + te + vala" 3x3+3+3x40%
+      ex "Raaka-te + te + vala" 2+2+2x70% 2+1+1x75% 1+1+1x80% 1+1+1x85% 1+1+1x80%
+      ex "Te-veto" 2x90% 1x100% 1x110% 1x120% 1x130% 1x140% 3x1x100%
+      ex "Te allepudotus potkulla" 3x70% 2x80% 3x2x90%
 
     {{tiistai}}
 
     session Keskiviikko
+      ex "Hidas ty-veto + rive allemeno nivusilta + YT kyykkyyn" 3x3+3+3x40%
+      ex "Raaka-rive + YT" 1+1x75% 1+1x80%
+      ex "Raaka-rive" 1x85% 2x2x80%
+      ex Etukyykky 1x75% 1x80% 1x85% 1x90% 1x95% 2x3x85%
+      ex Pekkakyykky 2x6x60%
+      ex "Ty-veto pukeilta AP" 3x80% 2x90% 1x100% 1x110% 1x120% 1x130% 1x140% 3x2x100%
 
     {{torstai}}
 
     session Perjantai
+      ex "Ty-veto" 2x90% 1x100% 1x110% 1x120% 1x130% 3x1x110%
+      ex "YT pukeilta" 3x70% 3x80% 2x90% 1x100% 1x103% 1x105% AMRAP
+      ex Leuat 3x12
+      ex Juoksu
 
     session Lauantai
+      ex Tempaus 3x60% 3x70% 2x80% 1x85% 1x90% 2x2x80%
+      ex Työntö 3x60% 3x70% 2x80% 1x85% 1x90% 2x2x80%
+      ex Kyykky 1x75% 1x80% 1x85% 1x90% 1x95% 2x3x85%
+      ex "Te-veto pukeilta AP" 5x60% 5x70% 4x80% 3x90% 3x100% 3x110% 4x3x90%
 
     session Sunnuntai
 
