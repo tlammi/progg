@@ -8,6 +8,7 @@ program "Voluumi 2 (Beta)"
       ex SOTS-punnerrus
       ex Te-veto 2x4x60% 2x4x65% 3x3x68%
       ex Kyykky 1x70% 1x80% 1x90% 2x5x70% 2x9x65%
+      ex "Pystysoutu te-ote"
 
     session Tiistai
       ex Vapu 4x65% 4x70% 4x72% 3x3x75%
@@ -27,10 +28,11 @@ program "Voluumi 2 (Beta)"
       ex "Yhden jalan RDL"
 
     session Perjantai
-      ex Pystäri
+      ex Pystäri 5x5x70%
       ex Ty-veto 2x4x70% 2x4x75% 3x4x78%
       ex Stoppietukyykky 2x5x70%
       ex Vatsat
+      ex "Pystysoutu ty-ote"
 
     session Lauantai
       ex Te-voimaveto 4x55% 4x60% 4x4x65%
