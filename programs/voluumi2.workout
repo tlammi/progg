@@ -68,15 +68,56 @@ program "Voluumi 2 (Beta)"
       ex "Yhden jalan RDL"
 
     session Perjantai
-      ex Pystäri
-      ex Ty-veto
-      ex Etukyykky
-      ex Ty-mave
+      ex Pystäri 5x5x70%
+      ex Ty-veto 2x5x73% 2x5x80% 2x5x87% 2x5x91%
+      ex Etukyykky 1x70% 1x80% 1x90% 2x3x80% 2x6x75%
+      ex Ty-mave 2x3x80% 2x3x87% 2x3x94%
 
     session Lauantai
-      ex Te-voimaveto
-      ex Te-veto
-      ex "Vapu niskalta te-ote"
+      ex Te-voimaveto 2x5x60% 2x5x65% 2x5x70% 3x4x73%
+      ex Te-veto 2x5x73% 2x5x77% 2x5x82% 2x5x86%
+      ex "Vapu niskalta te-ote" 3x70% 3x80% 3x3x85%
       ex Penkki
+      ex "Ranskalainen punnerrus"
+
+    session Sunnuntai
+
+  cycle "Viikko 3"
+    session Maanantai
+      ex SOTS-punnerrus
+      ex Te-veto 2x5x82% 2x5x86% 4x5x90%
+      ex Kyykky 1x70% 1x80% 1x90% 2x5x75% 2x9x70%
+      ex Ty-veto 5x75% 5x79% 5x83% 5x87% 5x91% 3x3x95%
+
+    session Tiistai
+      ex Vapu 4x70% 4x72% 3x3x75%
+      ex Ty-veto 2x5x70% 2x5x75% 2x5x78% 5x80% 5x83%
+      ex Vatsat
+
+    session Keskiviikko
+      ex Te-voimaveto 2x4x55% 2x4x58% 3x3x62%
+      ex "Raaka-te puolikyykkyyn" 2x1x55% 2x1x58% 2x1x62%
+      ex Vala 5x60% 5x70% 3x5x80%
+      ex "Te-mave" 2x3x85% 3x90% 3x94% 3x98%
+
+    session Torstai
+      ex Olankohautukset
+      ex Leuat
+      ex "Lantionnostot"
+      ex "Askelkyykky ATG"
+      ex "Yhden jalan RDL"
+
+    session Perjantai
+      ex Pystäri 5x5x70%
+      ex Ty-veto 2x5x73% 2x5x80% 2x5x87% 2x5x91%
+      ex Etukyykky 1x70% 1x80% 1x90% 2x3x80% 2x6x75%
+      ex Ty-mave 2x3x80% 2x3x87% 2x3x94%
+
+    session Lauantai
+      ex Te-voimaveto 2x5x60% 2x5x65% 2x5x70% 3x4x73%
+      ex Te-veto 2x5x73% 2x5x77% 2x5x82% 2x5x86%
+      ex "Vapu niskalta te-ote" 3x70% 3x80% 3x3x85%
+      ex Penkki
+      ex "Ranskalainen punnerrus"
 
     session Sunnuntai
