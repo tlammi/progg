@@ -135,18 +135,25 @@ program "Voluumi 2 (Beta)"
       ex Kyykky 1x70% 1x80% 1x90% 3x80% 2x5x70%
       ex Pystäri 5x3x80%
       ex Vatsat
+
     session Tiistai
+
     session Keskiviikko
       ex "YT pukeilta" 2x2x74% 2x2x78% 2x81% 1x87%
       ex Ty-veto 2x5x81% 2x5x87% 2x5x94% 3x3x98%
       ex Etukyykky 1x70% 1x80% 1x90% 2x3x80%
+
     session Torstai
+
     session Perjantai
       ex Tempaus 2x2x80% 2x2x84% 2x2x89% 3x1x93%
       ex Työntö 2x67% 2x74% 2x2x81% 2x1x84%
+      ex Vatsat
+
     session Lauantai
       ex Te-voimaveto 3x3x63% 3x2x67% 2x72% 1x76%
       ex "Raaka-te puolikyykkyyn" 3x1x63% 3x1x67% 1x72% 1x76%
       ex Vapu 2x4x73% 2x3x78% 2x3x82% 3x86%
       ex Stoppikyykky 3x5x70%
+
     session Sunnuntai
