@@ -2,7 +2,7 @@
 # Paljon vetoja
 #
 
-program "Voluumi 2 (Beta)"
+program "10vk vetoja (Beta)"
   cycle "Viikko 1"
     session Maanantai
       ex Sots-punnerrus
