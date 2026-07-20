@@ -157,3 +157,163 @@ program "10vk vetoja (Beta)"
       ex Stoppikyykky 3x5x70%
 
     session Sunnuntai
+
+  cycle "Viikko 5"
+    session Maanantai
+      ex Vapu
+      ex Te-veto
+      ex Kyykky
+      ex Pystäri
+
+    session Tiistai
+      ex "Raaka-te puolikyykkyyn"
+      ex Työntö
+      ex Ty-mave
+      ex Vatsat
+
+    session Keskiviikko
+      ex "YT pukeilta"
+      ex Ty-veto
+      ex Etukyykky
+
+    session Torstai
+
+    session Perjantai
+      ex Tempaus
+      ex Te-veto
+      ex Te-mave
+      ex Vatsat
+
+    session Lauantai
+      ex Te-voimaveto
+      ex "Raaka-te puolikyykkyyn"
+      ex Kyykky
+      ex Ty-veto
+
+    session Sunnuntai
+
+  cycle "Viikko 6"
+    session Maanantai
+      ex Vapu
+      ex Te-veto
+      ex Kyykky
+      ex Vatsat
+
+    session Tiistai
+
+    session Keskiviikko
+      ex Tempaus
+      ex Työntö
+      ex Pystäri
+
+    session Torstai
+
+    session Perjantai
+      ex "Raaka-te puolikyykkyyn"
+      ex "YT pukeilta"
+      ex Ty-veto
+      ex Kyykky
+
+    session Lauantai
+      ex Te-voimaveto
+      ex Raaka-ty
+      ex Etukyykky
+      ex Vatsat
+
+    session Sunnuntai
+
+  cycle "Viikko 7"
+    session Maanantai
+      ex Vapu
+      ex Te-veto
+      ex Kyykky
+      ex Pystäri
+
+    session Tiistai
+      ex "Raaka-te puolikyykkyyn"
+      ex Työntö
+      ex Ty-mave
+      ex Vatsat
+
+    session Keskiviikko
+      ex Te-voimaveto
+      ex "YT pukeilta"
+      ex Etukyykky
+      ex Ty-veto
+
+    session Torstai
+
+    session Perjantai
+      ex Tempaus
+      ex Te-veto
+      ex Te-mave
+
+    session Lauantai
+      ex Raaka-ty
+      ex Kyykky
+      ex Ty-veto
+      ex Pystäri
+
+    session Sunnuntai
+
+  cycle "Viikko 8"
+    session Maanantai
+      ex Vapu
+      ex Te-veto
+      ex Kyykky
+      ex Vatsat
+
+    session Tiistai
+
+    session Keskiviikko
+      ex "YT pukeilta"
+      ex Te-mave
+
+    session Torstai
+      ex Te-voimaveto
+      ex "Raaka-te puolikyykkyyn"
+      ex Etukyykky
+      ex Vatsat
+
+    session Perjantai
+
+    session Lauantai
+      ex Tempaus
+      ex Työntö
+      ex Ty-mave
+      ex Kyykky
+
+    session Sunnuntai
+
+  cycle "Viikko 9"
+    session Maanantai
+      ex Te-veto
+      ex Kyykky
+      ex Pystäri
+    session Tiistai
+      ex "Raaka-te puolikyykkyyn"
+      ex Työntö
+    session Keskiviikko
+      ex Te-voimaveto
+      ex Raaka-ty
+      ex Etukyykky
+    session Torstai
+    session Perjantai
+      ex Tempaus
+      ex "YT pukeilta"
+      ex Te-veto
+    session Lauantai
+      ex Vapu
+      ex Kyykky
+      ex Ty-veto
+    session Sunnuntai
+
+  cycle "Viikko 10"
+    session Maanantai
+    session Tiistai
+    session Keskiviikko
+    session Torstai
+    session Perjantai
+    session Lauantai
+      ex Kisa
+    session Sunnuntai
