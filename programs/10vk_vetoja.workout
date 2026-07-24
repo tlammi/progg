@@ -160,10 +160,10 @@ program "10vk vetoja (Beta)"
 
   cycle "Viikko 5"
     session Maanantai
-      ex Vapu
+      ex Vapu 2x3x73% 2x3x78% 2x3x82% 2x3x86%
       ex Te-veto 2x5x86% 2x5x90% 2x4x95% 2x3x99%
       ex Kyykky 1x70% 1x80% 1x90% 3x3x80% 3x5x70%
-      ex Pystäri
+      ex Pystäri 5x3x80%
 
     session Tiistai
       ex "Raaka-te puolikyykkyyn" 2x3x64% 2x3x68% 2x3x72% 2x76%
@@ -187,7 +187,7 @@ program "10vk vetoja (Beta)"
     session Lauantai
       ex Te-voimaveto 3x3x63% 3x2x67% 3x1x72%
       ex "Raaka-te puolikyykkyyn" 3x1x63% 3x1x67% 3x1x72%
-      ex Stoppikyykky 4x5x70%
+      ex Stoppikyykky 3x5x70%
       ex Ty-veto 3x5x81% 3x5x87% 5x94%
 
     session Sunnuntai
