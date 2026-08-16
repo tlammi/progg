@@ -226,35 +226,37 @@ program "10vk vetoja (Beta)"
 
   cycle "Viikko 7"
     session Maanantai
-      ex Vapu
-      ex Te-veto
-      ex Kyykky
-      ex Pystäri
+      ex Vapu 4x78% 4x86% 3x91% 3x95%
+      ex Te-veto 2x4x90% 2x4x95% 2x4x99% 3x3x103%
+      ex Kyykky 1x70% 1x80% 1x90% 2x3x85% 2x5x70%
+      ex Pystäri 2x5x73 2x4x78% 2x3x84%
 
     session Tiistai
-      ex "Raaka-te puolikyykkyyn"
-      ex Työntö
-      ex Ty-mave
+      ex "Raaka-te puolikyykkyyn" 2x3x68% 2x3x72% 2x2x76% 3x1x80%
+      ex Työntö 2x2x81% 2x2x84% 2x2x87% 2x1x91% 1x95% 1x98%
+      ex Ty-mave 3x87% 3x95% 3x101% 3x108% 3x114%
       ex Vatsat
 
     session Keskiviikko
-      ex Te-voimaveto
-      ex "YT pukeilta"
-      ex Etukyykky
-      ex Ty-veto
+      ex Te-voimaveto 2x4x60% 2x4x69% 3x3x77%
+      ex "YT pukeilta" 2x2x78% 2x2x81% 2x2x87% 2x1x91% 1x95% 1x101%
+      ex Etukyykky 1x70% 1x80% 1x90% 3x3x85%
+      ex Pekkakyykky 2x6x65%
+      ex Ty-veto 5x81% 5x87% 4x5x95%
 
     session Torstai
 
     session Perjantai
-      ex Tempaus
-      ex Te-veto
-      ex Te-mave
+      ex Tempaus 2x2x84% 2x2x89% 2x2x93% 2x1x97% 3x84%
+      ex Te-veto 2x4x90% 2x4x95% 2x4x99%
+      ex Te-mave 3x99% 3x103% 3x108% 3x112% 3x116%
+      ex Vatsat
 
     session Lauantai
-      ex Raaka-ty
-      ex Kyykky
-      ex Ty-veto
-      ex Pystäri
+      ex Raaka-ty 2x2x72% 2x2x75% 2x2x79% 2x2x83%
+      ex Tempokyykky 3x3x75%
+      ex Ty-veto 2x4x81% 2x4x87% 2x4x95% 2x4x98%
+      ex Pystäri 4x67% 4x73% 3x3x78%
 
     session Sunnuntai
 
