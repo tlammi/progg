@@ -262,30 +262,28 @@ program "10vk vetoja (Beta)"
 
   cycle "Viikko 8"
     session Maanantai
-      ex Vapu
-      ex Te-veto
-      ex Kyykky
+      ex Vapu 2x4x73% 2x3x78% 2x3x82% 3x86%
+      ex Te-veto 2x3x86% 2x3x90% 2x3x95% 2x3x99% 2x3x103%
+      ex Kyykky 1x70% 1x80% 1x90% 3x3x85%
       ex Vatsat
 
     session Tiistai
+      ex "Raaka-te puolikyykkyyn" 3x64% 3x68% 3x72% 2x76% 2x1x80% 2x1x83%
+      ex "YT pukeilta" 2x2x81% 2x2x87% 1x91% 1x95% 1x98%
 
     session Keskiviikko
-      ex "YT pukeilta"
-      ex Te-mave
 
     session Torstai
-      ex Te-voimaveto
-      ex "Raaka-te puolikyykkyyn"
-      ex Etukyykky
-      ex Vatsat
+      ex Ty-veto 4x81% 4x87% 2x4x91% 3x3x95%
+      ex Tempokyykky 3x3x75%
 
     session Perjantai
+      ex Te-voimaveto 2x4x69% 2x4x73% 2x3x77% 2x3x82%
+      ex Raaka-ty 3x62% 2x2x69% 2x2x72% 2x2x75%
+      ex Vala 1x100% 1x102% 1x105%
 
     session Lauantai
-      ex Tempaus
-      ex Työntö
-      ex Ty-mave
-      ex Kyykky
+      ex Yhteistreeni
 
     session Sunnuntai
 
