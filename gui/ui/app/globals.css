@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.session_holder {
+  justify-content: center;
+  /*padding top-bottom*/
+  padding: 10px;
+}
+
+.session_holder .session {
+  background: var(--background);
+  color: var(--foreground);
+  border: 2px solid black;
+}
+
+button {
+  @apply p-1 border-1 m-1 mb-2 from-gray-300 bg-gradient-to-b shadow-md rounded-sm;
+}
+
+button:active {
+  @apply shadow-none bg-gray-200;
+}
+
+input {
+  @apply bg-gray-50 shadow-md rounded-sm;
+}
