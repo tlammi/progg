@@ -1,7 +1,7 @@
 "use client"
 
 import {useState} from "react";
-
+import {useDataModel} from "@/store/dataModel.tsx";
 
 
 function Header({onAddAthlete}){
@@ -12,14 +12,42 @@ function Header({onAddAthlete}){
   </div>
 }
 
-function List(){
-  return <div className="border-1"></div>
+function ListEntry({athlete}){
+
+  const rmAthleteById = useDataModel(st => st.rmAthleteById);
+
+  const onDelete = ()=>{
+    if(!window.confirm("Are you sure you want to delete athlete '" + athlete.name + "'?")) return;
+    rmAthleteById(athlete.id);
+  };
+  return <div className="flex">
+    <p>{athlete.name}</p>
+    <div className="flex-1"></div>
+    <button onClick={onDelete}>Delete</button>
+    <button>Edit</button>
+  </div>
 }
 
-function AthletesContainer(){
+function List({athletes}){
+  return <div className="border-1">{
+    athletes.map((a) => <ListEntry key={a.id} athlete={a}/>)
+  }</div>
+}
+
+function AthletesContainer({activeAthlete, setActiveAthlete}){
+  const athletes = useDataModel(st => st.athletes);
+  const addAthlete = useDataModel(st => st.addAthlete);
+  const newAthleteId = useDataModel(st => st.newAthleteId);
+
   return <div className="w-sm">
-    <Header onAddAthlete={()=> {alert("asdf");}}/>
-    <List/>
+    <Header onAddAthlete={()=> {
+      const id = newAthleteId();
+      addAthlete({
+        id: id,
+        name: "Unnamed",
+      })
+    }}/>
+    <List athletes={athletes}/>
   </div>
 }
 
@@ -39,11 +67,9 @@ function NamedInput({name, st, setSt}){
   </div>
 }
 
-function AthleteDetailView(){
+function AthleteDetailView({activeAthlete, setActiveAthlete}){
 
-  const checkDelete = ()=>{
-    if(!window.confirm("Are you sure you want to delete <athlete>?")) return;
-  };
+  const addAthlete = useDataModel(st => st.addAthlete);
 
   const [st, setSt] = useState({
     "Name": "",
@@ -54,7 +80,18 @@ function AthleteDetailView(){
     "Strict press": "",
     "Push press": "",
   });
-  return <div hidden={false} className="w-sm border-1">
+
+  const onSave = () =>{
+    addAthlete({
+      name: st["Name"],
+    });
+  };
+
+  const onClose = () => {
+    setActiveAthlete(null);
+  };
+
+  return <div hidden={activeAthlete !== null} className="w-sm border-1">
     {
       Object.keys(st).map((x)=>{
         return <NamedInput key={x} name={x} st={st} setSt={setSt}/>
@@ -62,17 +99,17 @@ function AthleteDetailView(){
     }
     <div className="flex">
       <div className="flex-1"></div>
-      <button onClick={checkDelete}>Delete</button>
-      <button>Close</button>
-      <button>Save</button>
+      <button onClick={onClose}>Close</button>
+      <button onClick={onSave}>Save</button>
     </div>
   </div>
 }
 
 export default function AthletesView(){
+  const [activeAthlete, setActiveAthlete] = useState();
   return <div className="flex">
-    <AthletesContainer/>
-    <AthleteDetailView/>
+    <AthletesContainer activeAthlete={activeAthlete} setActiveAthlete={setActiveAthlete}/>
+    <AthleteDetailView activeAthlete={activeAthlete} setActiveAthlete={setActiveAthlete}/>
   </div>
 }
 
