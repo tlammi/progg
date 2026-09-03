@@ -10,7 +10,7 @@ import AthletesView from "./AthletesView.tsx";
 export default function Root(){
 
   const views = {
-    "Programs": <ProgramsView/>,
+    "Program Skeletons": <ProgramsView/>,
     "Exercises": <ExercisesView/>,
     "Athletes": <AthletesView/>,
   };
