@@ -20,6 +20,7 @@ function ExerciseDetailedView({ ex, close }: { ex: Exercise, close: () => void }
     <SetGroupEditor />
     <SetGroupEditor />
     <SetGroupEditor />
+    <button>Add</button>
     <div className="flex">
       <div className="flex-grow"></div>
       <button>Delete</button>
@@ -29,35 +30,40 @@ function ExerciseDetailedView({ ex, close }: { ex: Exercise, close: () => void }
   </div>;
 }
 
-function ExerciseSimpleView({ ex, onClick }: { ex: Exercise, onClick: (e: Exercise) => void }) {
+function ExerciseSimpleView({ ex, hidden, onClick }: { ex: Exercise, hidden: boolean, onClick: (e: Exercise) => void }) {
 
   const wrap = () => { onClick(ex); };
-  return <div className="border m-1" onClick={wrap}>
+  return <div hidden={hidden} className="border m-1" onClick={wrap}>
     <p><b>{ex.name}</b></p>
   </div>
 }
 
 export default function ExercisesView() {
 
-  const [st, setSt] = useState<any>();
+  const [exercises, setExercises] = useState<Object[]>([
+    { name: "Tempaus", sets: [], hidden: false },
+    { name: "Työntö", sets: [], hidden: false },
+    { name: "Kyykky", sets: [], hidden: false },
+    { name: "Etukyykky", sets: [], hidden: false },
+    { name: "Bulgarialainen kyykky", sets: [], hidden: false },
+  ]);
+
+  const [detailedView, setDetailedView] = useState<any>();
 
   const onClick = (e: Exercise) => {
-    setSt(<ExerciseDetailedView ex={e} close={() => { setSt(null); }} />);
+    setDetailedView(<ExerciseDetailedView ex={e} close={() => { setDetailedView(null); }} />);
   };
 
-  const mkEx = (nm: string) => {
-    return { name: nm, sets: [] };
+  const onEdit = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const str = e.target.value.toLowerCase();
+    setExercises(exercises.map(e => ({ ...e, hidden: e.name.toLowerCase().indexOf(str) < 0 })));
   };
 
   return <div className="flex flex-col h-screen">
-    <input placeholder="Filter"></input>
+    <input placeholder="Filter" onChange={onEdit}></input>
     <div className="bg-green-300 flex-grow flex flex-wrap items-start">
-      {st}
-      <ExerciseSimpleView ex={mkEx("Tempaus")} onClick={onClick}></ExerciseSimpleView>
-      <ExerciseSimpleView ex={mkEx("Työntö")} onClick={onClick}></ExerciseSimpleView>
-      <ExerciseSimpleView ex={mkEx("Kyykky")} onClick={onClick}></ExerciseSimpleView>
-      <ExerciseSimpleView ex={mkEx("Etukyykky")} onClick={onClick}></ExerciseSimpleView>
-      <ExerciseSimpleView ex={mkEx("Bulgarialainen kyykky")} onClick={onClick}></ExerciseSimpleView>
+      {detailedView}
+      {exercises.map(e => <ExerciseSimpleView hidden={e.hidden} key={e.name} ex={e} onClick={onClick} />)}
     </div>
   </div>;
 }
