@@ -3,10 +3,23 @@
 import { useState } from "react";
 import { type Exercise } from "@/store/dataModel";
 
+function SetGroupEditor() {
+  return <div className="grid grid-flow-col mb-2">
+    <input className="w-20" placeholder="Sets"></input>
+    <input className="w-20" placeholder="Reps"></input>
+    <input className="w-20" placeholder="Load"></input>
+    <input className="w-20" placeholder="Unit"></input>
+    <input className="w-20" placeholder="Hint"></input>
+    <button>Delete</button>
+  </div>
+}
 
 function ExerciseDetailedView({ ex, close }: { ex: Exercise, close: () => void }) {
   return <div className="border bg-white absolute z-1 w-lg m-5 shadow-lg rounded-sm">
     <h2>{ex.name}</h2>
+    <SetGroupEditor />
+    <SetGroupEditor />
+    <SetGroupEditor />
     <div className="flex">
       <div className="flex-grow"></div>
       <button>Delete</button>
@@ -37,7 +50,7 @@ export default function ExercisesView() {
   };
 
   return <div className="flex flex-col h-screen">
-    <input placeholder="search"></input>
+    <input placeholder="Filter"></input>
     <div className="bg-green-300 flex-grow flex flex-wrap items-start">
       {st}
       <ExerciseSimpleView ex={mkEx("Tempaus")} onClick={onClick}></ExerciseSimpleView>
