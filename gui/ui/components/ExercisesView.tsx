@@ -1,7 +1,8 @@
 "use client"
 
 import { useState } from "react";
-import { type Exercise, useExercises } from "@/store/dataModel";
+import { type Exercise } from "@/store/dataModel";
+import { useExercises } from "@/store/exercises";
 
 function SetGroupEditor() {
   return <div className="grid grid-flow-col mb-2">
