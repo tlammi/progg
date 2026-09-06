@@ -34,7 +34,7 @@ function ExerciseDetailedView({ ex, close }: { ex: Exercise, close: () => void }
     close();
   };
 
-  return <div className="border bg-white absolute z-1 w-lg m-5 shadow-lg rounded-sm">
+  return <div className="popup">
     <input className="m-2" defaultValue={ex.name} onChange={onName}></input>
     <SetGroupEditor />
     <SetGroupEditor />
