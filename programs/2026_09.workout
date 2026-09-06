@@ -22,11 +22,11 @@ program "2026-09"
 
   cycle "Viikko 1"
     session Maanantai
+      ex Vapu 3x75% 3x80% 2x3x83% 2x3x85%
       ex Te-veto 2x4x60% 2x4x65% 2x3x68%
       ex Tempokyykky 3x3x85%
       ex "Bulgarialainen kyykky" 6x5x40
       ex Lantionnostot 3x10
-      ex Vapu 3x75% 3x80% 2x3x83% 2x3x85%
 
     session Tiistai
 
@@ -39,13 +39,14 @@ program "2026-09"
 
     session Perjantai
       ex "Raaka-työntö" 3x65% 2x3x70% 2x3x73%
-      ex Ty-veto 2x5x65% 2x5x75% 1x5x85%
+      ex Ty-veto 5x65% 5x75% 5x85%
       ex Etukyykky 1x70% 1x80% 1x90% 2x3x80% 3x5x75%
       ex Pekkakyykky 2x6x65%
 
     session Lauantai
       ex "Tempaus EMOM" 15x1x70%
-      ex Te-veto 5x70% 5x74% 4x4x77%
+      ex Te-veto 5x70% 5x74% 2x4x77%
+      ex "YT pukeilta" 2x80% 2x2x85% 2x90% 1x95%
 
     session Sunnuntai
 
@@ -56,65 +57,64 @@ program "2026-09"
       ex Etukyykky 1x70% 1x80% 1x90% 2x3x80% 3x5x75%
       ex Pekkakyykky 2x5x65%
       ex Lantionnostot 3x10
-      ex Vapu 3x80% 3x85% 3x90% 2x3x93%
 
     session Tiistai
 
     session Keskiviikko
       ex "Te-allemeno nivusilta AP + vala + allepudotus niskalta" 5x3+3+3x40%
       ex "Te pukeilta AP" 3x75% 3x80% 3x83% 2x3x85%
-      ex Te-veto 2x5x70% 2x5x72% 3x5x76% 2x3x81%
+      ex Te-veto 5x70% 5x72% 2x5x76% 2x3x81%
       ex Kyykky 1x70% 1x80% 1x90% 2x3x80% 4x9x70%
 
     session Torstai
 
     session Perjantai
-      ex Te-veto 2x5x73% 2x5x77% 2x5x82% 2x5x86%
+      ex Vapu 3x80% 3x85% 3x90% 2x3x93%
       ex Stoppikyykky 3x3x85%
       ex "Bulgarialainen kyykky" 6x5x60
+      ex Te-veto 2x5x73% 2x5x77% 2x5x82% 2x5x86%
 
     session Lauantai
       ex "Tempaus EMOM" 20x1x75%
       ex "Rive pukeilta AP + etukyykky + YT" 2+2+2x70% 2x2+2+2x76% 2x2+2+1x80%
+      ex "YT pukeilta" 2x80% 2x2x85% 2x90% 1x95%
       ex Ty-veto 5x73% 5x80% 5x87% 5x91%
-      ex Kyykky 1x70% 1x80% 1x90% 3x80% 2x9x70%
 
     session Sunnuntai
 
   cycle "Viikko 3"
     session Maanantai
-      ex Raaka-työntö 3x68% 3x73% 2x2x78%
-      ex Ty-veto 2x5x70% 2x5x75% 2x5x78% 5x80% 5x83%
+      ex Raaka-työntö 3x68% 3x73% 6x2x78%
+      ex Ty-veto 5x75% 5x80% 5x83% 5x87% 5x91% 3x3x95%
       ex Etukyykky 1x70% 1x80% 1x90% 2x3x80% 3x5x75%
       ex Pekkakyykky 2x5x65%
       ex Lantionnostot 3x10
-      ex Vapu 3x80% 3x85% 3x90% 2x3x93%
 
     session Tiistai
 
     session Keskiviikko
       ex "Te-allemeno nivusilta AP + vala + allepudotus niskalta" 5x3+3+3x40%
-      ex "Te pukeilta AP" 3x75% 3x80% 3x83% 2x3x85%
-      ex Te-veto 2x5x70% 2x5x72% 3x5x76% 2x3x81%
+      ex "Te riipusta AP" 3x75% 3x80% 3x83% 2x3x85%
+      ex Te-veto 5x86% 5x90% 2x4x95%
       ex Kyykky 1x70% 1x80% 1x90% 2x3x80% 4x9x70%
 
     session Torstai
 
     session Perjantai
+      ex Vapu 3x85% 3x90% 3x95% 2x2x98%
       ex Te-veto 2x5x73% 2x5x77% 2x5x82% 2x5x86%
       ex Stoppikyykky 3x3x85%
       ex "Bulgarialainen kyykky" 6x5x60
 
     session Lauantai
       ex "Tempaus EMOM" 20x1x80%
-      ex "Rive pukeilta AP + etukyykky + YT" 2+2+2x70% 2x2+2+2x76% 2x2+2+1x80%
+      ex "Rive pukeilta AP + etukyykky + YT" 2+2+2x70% 2x2+2+2x76% 4x2+2+1x80%
       ex Ty-veto 5x73% 5x80% 5x87% 5x91%
       ex Kyykky 1x70% 1x80% 1x90% 3x80% 2x9x70%
 
     session Sunnuntai
 
-  cycle "Viikko 4"
-    # Kevyt
+  cycle "Viikko 4 (kevvt)"
     session Maanantai
 
     session Tiistai
@@ -126,7 +126,9 @@ program "2026-09"
     session Perjantai
 
     session Lauantai
-      ex "Tempaus E1,5MOM" 20x85%
+      ex Tempaus 2x85% 1x88% 1x92% 1x96%
+      ex "Tempaus 1min tauolla" 15x1x85%
+      ex Työntö
 
     session Sunnuntai
 
@@ -142,11 +144,12 @@ program "2026-09"
     session Perjantai
 
     session Lauantai
+      ex Tempaus 2x85% 1x88% 1x92% 1x96% 1x99%
+      ex Työntö
 
     session Sunnuntai
 
-  cycle "Viikko 6"
-    # Kevyt
+  cycle "Viikko 6 (kevyt)"
     session Maanantai
 
     session Tiistai
@@ -158,6 +161,7 @@ program "2026-09"
     session Perjantai
 
     session Lauantai
+      ex Tempaus 2x85% 1x90% 1x94% 1x98% 1x101%
 
     session Sunnuntai
 
