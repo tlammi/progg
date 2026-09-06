@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react";
-import { type Exercise } from "@/store/dataModel";
+import { type Exercise, useExercises } from "@/store/dataModel";
 
 function SetGroupEditor() {
   return <div className="grid grid-flow-col mb-2">
@@ -39,31 +39,32 @@ function ExerciseSimpleView({ ex, hidden, onClick }: { ex: Exercise, hidden: boo
 }
 
 export default function ExercisesView() {
-
-  const [exercises, setExercises] = useState<Object[]>([
-    { name: "Tempaus", sets: [], hidden: false },
-    { name: "Työntö", sets: [], hidden: false },
-    { name: "Kyykky", sets: [], hidden: false },
-    { name: "Etukyykky", sets: [], hidden: false },
-    { name: "Bulgarialainen kyykky", sets: [], hidden: false },
-  ]);
+  const ex = useExercises();
 
   const [detailedView, setDetailedView] = useState<any>();
+  const [filterContent, setFilterContent] = useState<string>("");
 
   const onClick = (e: Exercise) => {
     setDetailedView(<ExerciseDetailedView ex={e} close={() => { setDetailedView(null); }} />);
   };
 
   const onEdit = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const str = e.target.value.toLowerCase();
-    setExercises(exercises.map(e => ({ ...e, hidden: e.name.toLowerCase().indexOf(str) < 0 })));
+    setFilterContent(e.target.value.toLowerCase());
   };
 
+  const onNew = () => {
+    ex.newExercise();
+  };
+
+  const simpleViews =
+    ex.exercises.map(e => <ExerciseSimpleView hidden={e.name.toLowerCase().indexOf(filterContent) < 0} key={e.id} ex={e} onClick={onClick} />);
+
   return <div className="flex flex-col h-screen">
+    <button onClick={onNew}>New</button>
     <input placeholder="Filter" onChange={onEdit}></input>
     <div className="bg-green-300 flex-grow flex flex-wrap items-start">
       {detailedView}
-      {exercises.map(e => <ExerciseSimpleView hidden={e.hidden} key={e.name} ex={e} onClick={onClick} />)}
+      {simpleViews}
     </div>
   </div>;
 }
