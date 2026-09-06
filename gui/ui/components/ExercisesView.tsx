@@ -15,17 +15,35 @@ function SetGroupEditor() {
 }
 
 function ExerciseDetailedView({ ex, close }: { ex: Exercise, close: () => void }) {
+
+  const onName = (e: React.ChangeEvent<HTMLInputElement>) => {
+    ex.name = e.target.value;
+  };
+
+  const updateExercise = useExercises().updateExercise;
+  const deleteExercise = useExercises().deleteExercise;
+
+  const onSave = () => {
+    updateExercise(ex);
+    close();
+  };
+
+  const onDelete = () => {
+    deleteExercise(ex);
+    close();
+  };
+
   return <div className="border bg-white absolute z-1 w-lg m-5 shadow-lg rounded-sm">
-    <h2>{ex.name}</h2>
+    <input className="m-2" defaultValue={ex.name} onChange={onName}></input>
     <SetGroupEditor />
     <SetGroupEditor />
     <SetGroupEditor />
     <button>Add</button>
     <div className="flex">
       <div className="flex-grow"></div>
-      <button>Delete</button>
+      <button onClick={onDelete}>Delete</button>
       <button onClick={close}>Close</button>
-      <button>Save</button>
+      <button onClick={onSave}>Save</button>
     </div>
   </div>;
 }
@@ -53,7 +71,8 @@ export default function ExercisesView() {
   };
 
   const onNew = () => {
-    ex.newExercise();
+    const e = ex.newExercise();
+    setDetailedView(<ExerciseDetailedView ex={e} close={() => { setDetailedView(null); }} />);
   };
 
   const simpleViews =

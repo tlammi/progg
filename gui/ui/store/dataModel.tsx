@@ -102,6 +102,7 @@ export type ExerciseStore = {
   exercises: ExerciseMap,
   newExercise: () => Exercise,
   updateExercise: (e: Exercise) => void,
+  deleteExercise: (e: Exercise) => void,
 }
 
 export const exerciseStore = create<ExerciseStore>((set, get) => ({
@@ -130,6 +131,14 @@ export const exerciseStore = create<ExerciseStore>((set, get) => ({
       exercises: obj
     }));
   },
+
+  deleteExercise: (ex: Exercise) => {
+    let obj = get().exercises;
+    delete obj[ex.id];
+    set(_ => ({
+      exercises: obj
+    }));
+  },
 }));
 
 export function useExercises() {
@@ -137,6 +146,7 @@ export function useExercises() {
     exercises: exerciseStore(useShallow(st => Object.values(st.exercises))),
     newExercise: exerciseStore(st => st.newExercise),
     updateExercise: exerciseStore(st => st.updateExercise),
+    deleteExercise: exerciseStore(st => st.deleteExercise),
   }
 };
 
