@@ -23,7 +23,7 @@ program "2026-09"
   cycle "Viikko 1"
     session Maanantai
       ex Vapu 3x75% 3x80% 2x3x83% 2x3x85%
-      ex Te-veto 2x4x60% 2x4x65% 2x3x68%
+      ex Te-veto 4x60% 2x4x65% 2x3x68%
       ex Kyykky 1x70% 1x80% 1x90% 2x3x80% 3x9x70%
       ex Lantionnostot 3x10
 
@@ -44,7 +44,7 @@ program "2026-09"
       ex Pekkakyykky 2x6x65%
 
     session Lauantai
-      ex "Tempaus EMOM" 15x1x70%
+      ex "Tempaus EMOM" 20x1x70%
       ex Te-veto 5x70% 5x74% 2x4x77%
       ex "YT pukeilta" 2x80% 2x2x85% 2x90% 1x95%
 
