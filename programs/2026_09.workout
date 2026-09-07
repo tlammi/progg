@@ -24,8 +24,7 @@ program "2026-09"
     session Maanantai
       ex Vapu 3x75% 3x80% 2x3x83% 2x3x85%
       ex Te-veto 2x4x60% 2x4x65% 2x3x68%
-      ex Tempokyykky 3x3x85%
-      ex "Bulgarialainen kyykky" 6x5x40
+      ex Kyykky 1x70% 1x80% 1x90% 2x3x80% 3x9x70%
       ex Lantionnostot 3x10
 
     session Tiistai
@@ -33,7 +32,8 @@ program "2026-09"
     session Keskiviikko
       ex "Te-allemeno nivusilta AP + vala + allepudotus niskalta" 5x3+3+3x40%
       ex "Te-veto + tempaus riipusta AP" 2+2x65% 2+2x70% 2+2x73% 2x2+2x75%
-      ex Kyykky 1x70% 1x80% 1x90% 2x3x80% 3x9x70%
+      ex Tempokyykky 3x3x85%
+      ex "Bulgarialainen kyykky" 6x5x40
 
     session Torstai
 
