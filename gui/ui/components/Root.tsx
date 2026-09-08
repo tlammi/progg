@@ -1,23 +1,23 @@
 "use client"
 
-import {useState} from "react";
-import SessionContainer from "./SessionContainer.tsx";
-import Navigation from "./Navigation.tsx";
-import ExercisesView from "./ExercisesView.tsx";
-import ProgramsView from "./ProgramsView.tsx";
-import AthletesView from "./AthletesView.tsx";
+import { useState } from "react";
+import SessionContainer from "./SessionContainer";
+import Navigation from "./Navigation";
+import ExercisesView from "./ExercisesView";
+import ProgramSkeletonsView from "./ProgramSkeletonsView";
+import AthletesView from "./AthletesView";
 
-export default function Root(){
+export default function Root() {
 
   const views = {
-    "Program Skeletons": <ProgramsView/>,
-    "Exercises": <ExercisesView/>,
-    "Athletes": <AthletesView/>,
+    "Program Skeletons": <ProgramSkeletonsView />,
+    "Exercises": <ExercisesView />,
+    "Athletes": <AthletesView />,
   };
 
   const [c, setC] = useState("Programs");
 
-  const onclick = (msg: string)=>{
+  const onclick = (msg: string) => {
     setC(msg);
   };
   return <div>

@@ -19,6 +19,12 @@ export class Range {
       return new Range(this.min * other, this.max * other);
     return new Range(this.min * other.min, this.max * other.max);
   }
+
+  toString(): string {
+    if (this.min == this.max) return this.min.toString();
+    return `${this.min}-${this.max}`;
+  }
+
 };
 
 

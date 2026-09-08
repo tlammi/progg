@@ -41,6 +41,14 @@ body {
   border: 2px solid black;
 }
 
+thead tr th {
+  @apply border-2 p-1;
+}
+
+tbody tr td {
+  @apply border p-1;
+}
+
 button {
   @apply p-1 border-1 m-1 mb-2 from-gray-300 bg-gradient-to-b shadow-md rounded-sm;
 }
