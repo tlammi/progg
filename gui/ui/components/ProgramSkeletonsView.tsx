@@ -5,7 +5,8 @@ import { useDraggable } from "@dnd-kit/react";
 import usePrograms from "@/store/programs";
 import { Program } from "@/store/dataModel";
 import DragHandle from "./DragHandle";
-import { type Exercise, parseRange, type Range } from "@/store/dataModel";
+import { type Exercise, parseRange, type Range, type SetGroup } from "@/store/dataModel";
+import DropdownButton from "./DropdownButton";
 
 
 function NewProgramDialog({ onClose }: { onClose: () => void }) {
@@ -93,35 +94,60 @@ function ProgramTable({ onEdit }: { onEdit: (p: Program) => void }) {
   </>;
 }
 
-function ExerciseView({ ex }: { ex: Exercise }) {
+function ExerciseDropdownButton() {
+  const [hidden, setHidden] = useState(true);
 
-  /*
-  const ex: Exercise = {
-    id: 1,
-    name: "Tempaus",
-    sets: [
-      { sets: parseRange("1-3") as Range, reps: parseRange("3") as Range, load: parseRange("100") as Range, unit: "%", hint: "" },
-    ],
+  const onClose = () => {
+    setHidden(true);
   };
-  */
+  return <DropdownButton hidden={hidden} setHidden={setHidden} text="..." >
+    <button onClick={onClose}>Close</button>
+  </DropdownButton>
+}
 
+function SessionDropdownButton() {
+  const [hidden, setHidden] = useState(true);
+  const onClose = () => {
+    setHidden(true);
+  };
+  return <DropdownButton hidden={hidden} setHidden={setHidden} text="..." >
+    <button onClick={onClose}>Close</button>
+  </DropdownButton>
+}
+
+function ExerciseView({ ex }: { ex: Exercise }) {
   const id = useId();
   const { ref, handleRef, isDragging } = useDraggable({ id });
+
+  const setGroup = (idx: number) => {
+    // TODO: something else than the index for the key
+    return <div key={idx} className="grid grid-cols-5">
+      <input defaultValue={ex.sets[idx].sets.toString()} />
+      <input defaultValue={ex.sets[idx].reps.toString()} />
+      <input defaultValue={ex.sets[idx].load.toString()} />
+      <input defaultValue={ex.sets[idx].unit.toString()} />
+      <input defaultValue={ex.sets[idx].hint} />
+    </div>
+  };
+
+  const allSetGroups = () => {
+    return ex.sets.map((_, idx) => setGroup(idx));
+  };
+
+  const onPlus = () => {
+    // TODO: This does not work, need to use a state.
+    ex.sets.concat({ sets: parseRange("0") as Range, reps: parseRange("0") as Range, load: parseRange("0") as Range, unit: "%", hint: "" });
+  };
+
   return <div ref={ref} className="border m-1">
     <div className="flex">
       <h2>{ex.name}</h2>
       <div className="flex-1"></div>
-      <button>...</button>
+      <ExerciseDropdownButton />
       <DragHandle ref={handleRef} />
     </div>
-    <div>
-      <div className="grid grid-cols-4">
-        <input defaultValue={ex.sets[0].sets.toString()} />
-        <input defaultValue={ex.sets[0].reps.toString()} />
-        <input defaultValue={ex.sets[0].load.toString()} />
-        <input defaultValue={ex.sets[0].unit.toString()} />
-      </div>
-    </div>
+    {allSetGroups()}
+    <button onClick={onPlus}>+</button>
   </div>
 }
 
@@ -133,12 +159,11 @@ function SessionView() {
       { sets: parseRange("1-3") as Range, reps: parseRange("3") as Range, load: parseRange("100") as Range, unit: "%", hint: "" },
     ],
   };
-
   const id = useId();
   const { ref, handleRef, isDragging } = useDraggable({ id });
   return <div ref={ref} className="border-solid border-2 border-black session ml-1 mr-1">
     <input placeholder="Session Name"></input>
-    <button>...</button>
+    <SessionDropdownButton />
     <DragHandle ref={handleRef} />
     <ExerciseView ex={ex} />
   </div>
