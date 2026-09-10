@@ -95,23 +95,14 @@ function ProgramTable({ onEdit }: { onEdit: (p: Program) => void }) {
 }
 
 function ExerciseDropdownButton() {
-  const [hidden, setHidden] = useState(true);
-
-  const onClose = () => {
-    setHidden(true);
-  };
-  return <DropdownButton hidden={hidden} setHidden={setHidden} text="..." >
-    <button onClick={onClose}>Close</button>
+  return <DropdownButton text="..." >
+    <div>Placeholder</div>
   </DropdownButton>
 }
 
 function SessionDropdownButton() {
-  const [hidden, setHidden] = useState(true);
-  const onClose = () => {
-    setHidden(true);
-  };
-  return <DropdownButton hidden={hidden} setHidden={setHidden} text="..." >
-    <button onClick={onClose}>Close</button>
+  return <DropdownButton text="..." >
+    <div>Placeholder</div>
   </DropdownButton>
 }
 
@@ -191,9 +182,13 @@ function ProgramEditor({ active, onClose }: { active: Program, onClose: () => vo
           <option value="4">4</option>
         </select>
         <button>&gt;</button>
+        <DropdownButton text="...">
+          <button className="whitespace-nowrap">Add Cycle</button>
+          <button className="whitespace-nowrap">Add Session</button>
+        </DropdownButton>
       </div>
     </div>
-    <div className="flex justify-center">
+    <div className="flex justify-center px-4">
       <SessionView />
       <SessionView />
       <SessionView />

@@ -105,6 +105,7 @@ export type Session = {
 }
 
 export type Cycle = {
+  id: number,
   name: string,
   sessions: Session[],
 }

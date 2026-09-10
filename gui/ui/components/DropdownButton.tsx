@@ -1,23 +1,22 @@
-import { useState, useEffect, SetStateAction, type Dispatch } from "react";
+import { useState } from "react";
 
 
 type Args = {
-  hidden: boolean,
-  setHidden: Dispatch<SetStateAction<boolean>>,
   text: string,
   children?: React.ReactNode,
 };
 
 export default function DropdownButton(props: Args) {
   const [dropdown, setDropdown] = useState<any>();
+  const [hidden, setHidden] = useState<any>(true);
 
   const onClick = () => {
     setDropdown(props.children);
-    props.setHidden(!props.hidden);
+    setHidden(!hidden);
   };
   return <div className="relative inline-block">
     <button onClick={onClick}>{props.text}</button>
-    <div hidden={props.hidden} className="border bg-white absolute inline-block z-1 shadow-lg rounded-sm left-0 top-full">
+    <div hidden={hidden} className="border bg-white absolute inline-block z-1 shadow-lg rounded-sm left-0 top-full">
       {dropdown}
     </div>
   </div>;
