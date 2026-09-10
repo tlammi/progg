@@ -2,6 +2,15 @@ import { create } from "zustand";
 import { useShallow } from "zustand/react/shallow";
 import { Program, type Session, type Cycle } from "./dataModel";
 
+
+type Exercise = {
+  [id: number]: Exercise,
+}
+
+type CycleMap = {
+  [id: number]: Cycle,
+};
+
 type ProgramMap = {
   [id: number]: Program,
 }
@@ -52,19 +61,32 @@ export const exerciseStore = create<ExerciseStore>((set, get) => ({
   },
   newCycle: (p: Program) => {
     let programs = get().programs;
+    console.log(programs);
     let cycles = programs[p.id].cycles;
     const id = cycles.length === 0 ? 0 : cycles[cycles.length - 1].id + 1;
-    cycles.concat({ id: id, name: "", sessions: [] });
+
+    programs[p.id].cycles =
+      cycles.concat({ id: id, name: "", sessions: [] });
     set({ programs: programs });
     return cycles[cycles.length - 1];
-  }
+  },
 }));
 
-export default function useExercises() {
+export function usePrograms() {
   return {
     programs: exerciseStore(useShallow(st => Object.values(st.programs))),
     newProgram: exerciseStore(st => st.newProgram),
     updateProgram: exerciseStore(st => st.updateProgram),
     deleteProgram: exerciseStore(st => st.deleteProgram),
-  }
-};
+  };
+}
+
+export function useCycles(p: Program) {
+  return {
+    cycles: exerciseStore(st => st.programs[p.id].cycles),
+    newCycle: exerciseStore(st => st.newCycle),
+  };
+}
+
+export function useExercises(c: Cycle) {
+}
