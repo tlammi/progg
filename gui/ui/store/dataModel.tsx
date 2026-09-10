@@ -99,6 +99,7 @@ export type Exercise = {
 }
 
 export type Session = {
+  id: number,
   name: string,
   exercises: Exercise[],
 }

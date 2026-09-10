@@ -162,9 +162,12 @@ function SessionView() {
   const id = useId();
   const { ref, handleRef, isDragging } = useDraggable({ id });
   return <div ref={ref} className="border-solid border-2 border-black session ml-1 mr-1">
-    <input placeholder="Session Name"></input>
-    <SessionDropdownButton />
-    <DragHandle ref={handleRef} />
+    <div className="flex">
+      <input placeholder="Session Name"></input>
+      <div className="flex-1"></div>
+      <SessionDropdownButton />
+      <DragHandle ref={handleRef} />
+    </div>
     <ExerciseView ex={ex} />
   </div>
 }

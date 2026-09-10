@@ -15,10 +15,10 @@ export default function DropdownButton(props: Args) {
     setDropdown(props.children);
     props.setHidden(!props.hidden);
   };
-  return <>
+  return <div className="relative inline-block">
     <button onClick={onClick}>{props.text}</button>
-    <div hidden={props.hidden} className="popup">
+    <div hidden={props.hidden} className="border bg-green-400 absolute inline-block z-1 w-lg shadow-lg rounded-sm left-0 top-full">
       {dropdown}
     </div>
-  </>;
+  </div>;
 }
