@@ -113,7 +113,7 @@ export type Cycle = {
 export type Program = {
   id: number,
   name: string,
-  cycles: Cycle[],
+  cycles: number[],
 }
 
 export type Athlete = {

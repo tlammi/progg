@@ -188,7 +188,6 @@ function ProgramEditor({ active, onClose }: { active: Program, onClose: () => vo
 
   const onNewCycle = () => {
     newCycle(active);
-    alert("foo: " + cycles.length);
   };
 
   return <div>

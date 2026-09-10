@@ -15,7 +15,9 @@ type ProgramMap = {
   [id: number]: Program,
 }
 
-export type ExerciseStore = {
+export type Store = {
+  id: number,
+  cycles: CycleMap,
   programs: ProgramMap,
   newProgram: () => Program,
   updateProgram: (p: Program) => void,
@@ -23,13 +25,15 @@ export type ExerciseStore = {
   newCycle: (p: Program) => Cycle,
 }
 
-export const exerciseStore = create<ExerciseStore>((set, get) => ({
+const store = create<Store>((set, get) => ({
+  id: 0,
+  cycles: {},
   programs: {},
 
   newProgram: () => {
     const self = get();
-    const empty = Object.keys(self.programs).length === 0;
-    const id = empty ? 0 : Math.max(...(Object.keys(self.programs) as unknown as number[])) + 1;
+    const id = self.id;
+    set({ id: id + 1 });
     console.log(id);
     const ex: Program = {
       id: id,
@@ -59,32 +63,40 @@ export const exerciseStore = create<ExerciseStore>((set, get) => ({
       programs: obj
     }));
   },
+
   newCycle: (p: Program) => {
-    let programs = get().programs;
+    const self = get();
+    let programs = self.programs;
     console.log(programs);
     let cycles = programs[p.id].cycles;
-    const id = cycles.length === 0 ? 0 : cycles[cycles.length - 1].id + 1;
-
-    programs[p.id].cycles =
-      cycles.concat({ id: id, name: "", sessions: [] });
-    set({ programs: programs });
-    return cycles[cycles.length - 1];
+    const id = self.id;
+    set({ id: id + 1 });
+    cycles.push(id);
+    self.cycles[id] = { id: id, name: "", sessions: [] };
+    set({
+      id: id + 1,
+      cycles: self.cycles,
+      programs: programs,
+    });
+    console.log(self);
+    return self.cycles[id];
   },
+
 }));
 
 export function usePrograms() {
   return {
-    programs: exerciseStore(useShallow(st => Object.values(st.programs))),
-    newProgram: exerciseStore(st => st.newProgram),
-    updateProgram: exerciseStore(st => st.updateProgram),
-    deleteProgram: exerciseStore(st => st.deleteProgram),
+    programs: store(useShallow(st => Object.values(st.programs))),
+    newProgram: store(st => st.newProgram),
+    updateProgram: store(st => st.updateProgram),
+    deleteProgram: store(st => st.deleteProgram),
   };
 }
 
 export function useCycles(p: Program) {
   return {
-    cycles: exerciseStore(st => st.programs[p.id].cycles),
-    newCycle: exerciseStore(st => st.newCycle),
+    cycles: store(useShallow(st => st.programs[p.id].cycles.map(id => st.cycles[id]))),
+    newCycle: store(st => st.newCycle),
   };
 }
 
