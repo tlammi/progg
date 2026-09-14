@@ -1,11 +1,15 @@
 import { create } from "zustand";
 import { useShallow } from "zustand/react/shallow";
-import { Program, type Session, type Cycle } from "./dataModel";
+import { Program, type Session, type Cycle, type Exercise } from "./dataModel";
 
 
-type Exercise = {
+type ExerciseMap = {
   [id: number]: Exercise,
 }
+
+type SessionMap = {
+  [id: number]: Session,
+};
 
 type CycleMap = {
   [id: number]: Cycle,
@@ -17,16 +21,19 @@ type ProgramMap = {
 
 export type Store = {
   id: number,
+  sessions: SessionMap,
   cycles: CycleMap,
   programs: ProgramMap,
   newProgram: () => Program,
   updateProgram: (p: Program) => void,
   deleteProgram: (p: Program) => void,
   newCycle: (p: Program) => Cycle,
+  newSession: (c: Cycle) => Session,
 }
 
 const store = create<Store>((set, get) => ({
   id: 0,
+  sessions: {},
   cycles: {},
   programs: {},
 
@@ -67,7 +74,6 @@ const store = create<Store>((set, get) => ({
   newCycle: (p: Program) => {
     const self = get();
     let programs = self.programs;
-    console.log(programs);
     let cycles = programs[p.id].cycles;
     const id = self.id;
     set({ id: id + 1 });
@@ -81,6 +87,19 @@ const store = create<Store>((set, get) => ({
     console.log(self);
     return self.cycles[id];
   },
+  newSession: (c: Cycle) => {
+    const self = get();
+    let session_ids = self.cycles[c.id].sessions;
+    const id = self.id;
+    session_ids.push(id);
+    self.sessions[id] = { id: id, name: "New Session", exercises: [] };
+    set({
+      id: id + 1,
+      sessions: self.sessions,
+      cycles: self.cycles,
+    });
+    return self.sessions[id];
+  }
 
 }));
 
@@ -100,5 +119,17 @@ export function useCycles(p: Program) {
   };
 }
 
-export function useExercises(c: Cycle) {
+export function useSessions(c: Cycle | undefined) {
+  if (c === undefined) {
+    return {
+      sessions: [],
+      newSession: (_: Cycle) => {
+        console.log("skipping session creation");
+      }
+    };
+  }
+  return {
+    sessions: store(useShallow(st => st.cycles[c.id].sessions.map(id => st.sessions[id]))),
+    newSession: store(st => st.newSession),
+  };
 }

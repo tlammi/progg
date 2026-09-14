@@ -2,10 +2,10 @@
 
 import { useState, useRef, useEffect, useId, act } from "react";
 import { useDraggable } from "@dnd-kit/react";
-import { usePrograms, useCycles } from "@/store/programs";
+import { usePrograms, useCycles, useSessions } from "@/store/programs";
 import { Program } from "@/store/dataModel";
 import DragHandle from "./DragHandle";
-import { type Exercise, parseRange, type Range, type SetGroup } from "@/store/dataModel";
+import { type Exercise, parseRange, type Range, type SetGroup, type Cycle } from "@/store/dataModel";
 import DropdownButton from "./DropdownButton";
 
 
@@ -163,14 +163,21 @@ function SessionView() {
   </div>
 }
 
-function CycleView() {
-  return <div></div>
+function CycleView({ cycle }: { cycle: Cycle }) {
+  const sessions = useSessions(cycle).sessions;
+  return <>
+    <div className="flex justify-center px-4">
+      {sessions.map(s => <SessionView key={s.id} />)}
+    </div>
+  </>;
 };
 
 function ProgramEditor({ active, onClose }: { active: Program, onClose: () => void }) {
-  const [activeCycle, setActiveCycle] = useState(0);
+  const [activeCycle, setActiveCycle] = useState(-1);
   const cycles = useCycles(active).cycles;
   const newCycle = useCycles(active).newCycle;
+  // TODO: This does not work since cycle has not been intialized yet
+  const newSession = useSessions(cycles[activeCycle]).newSession;
 
   const decCycle = () => {
     if (activeCycle > 0)
@@ -190,6 +197,11 @@ function ProgramEditor({ active, onClose }: { active: Program, onClose: () => vo
     newCycle(active);
   };
 
+  const onNewSession = () => {
+    console.log(cycles);
+    newSession(cycles[activeCycle]);
+  };
+
   return <div>
     <div className="flex">
       <button onClick={onClose}>Close</button>
@@ -206,12 +218,12 @@ function ProgramEditor({ active, onClose }: { active: Program, onClose: () => vo
         <button onClick={incCycle}>&gt;</button>
         <DropdownButton text="...">
           <button onClick={onNewCycle} className="whitespace-nowrap">Add Cycle</button>
-          <button className="whitespace-nowrap">Add Session</button>
+          <button onClick={onNewSession} className="whitespace-nowrap">Add Session</button>
         </DropdownButton>
       </div>
     </div>
     <div className="flex justify-center px-4">
-      {activeCycle < cycles.length && cycles[activeCycle].sessions.map(s => <SessionView key={s.id} />)}
+      {activeCycle > 0 && <CycleView cycle={cycles[activeCycle]} />}
     </div>
   </div>;
 };
